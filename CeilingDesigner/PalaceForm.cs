@@ -822,48 +822,78 @@ namespace CeilingDesigner
             statForm.Show();
         }
 
+        //public void ReportGraph()
+        //{
+        //    //int maxHeihgt = gcount * height
+        //    //    + (2 * gcount < order.OrderGraphs.Count ? height : 0);
+
+        //    //Bitmap bmp = new Bitmap(width * 2, maxHeihgt);
+        //    //graphics.FillRectangle(Brushes.Black, 0, 0, width * 2, maxHeihgt);
+
+        //    List<OrderGraph> graphs = order.OrderGraphs;
+        //    int gcount = graphs.Count / 2;
+        //    int width = 640, height = 640;
+        //    Rectangle rect = new Rectangle(0, 0, width, height);
+        //    Bitmap bmp = new Bitmap(width * 2, height);
+        //    Graphics graphics = Graphics.FromImage(bmp);
+
+        //    try
+        //    {
+        //        for (int i = 0; i < gcount; i++)
+        //        {
+        //            graphics.FillRectangle(Brushes.White, 0, 0, width * 2,
+        //                height);
+
+        //            rect.X = 0; //rect.Y = i * height;
+        //            graphs[2 * i].DisplayGraph(graphics, rect);
+        //            rect.X = width; //rect.Y = i * height;
+        //            graphs[2 * i + 1].DisplayGraph(graphics, rect);
+
+        //            bmp.Save(AupuReportForm.ReportPhoto + i + ".png");
+        //        }
+
+        //        if (2 * gcount < graphs.Count)
+        //        {
+        //            graphics.FillRectangle(Brushes.White, 0, 0, width * 2,
+        //                height);
+
+        //            rect.X = 0; //rect.Y = a * height;
+        //            rect.Width *= 2;
+        //            graphs[2 * gcount].DisplayGraph(graphics, rect);
+
+        //            bmp.Save(AupuReportForm.ReportPhoto + gcount + ".png");
+        //        }
+
+        //        bmp.Save(AupuReportForm.ReportPhoto);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        System.Diagnostics.Debug.WriteLine(ex);
+        //    }
+        //    finally
+        //    {
+        //        graphics.Dispose();
+        //    }
+        //}
+
         public void ReportGraph()
         {
-            //int maxHeihgt = gcount * height
-            //    + (2 * gcount < order.OrderGraphs.Count ? height : 0);
-
-            //Bitmap bmp = new Bitmap(width * 2, maxHeihgt);
-            //graphics.FillRectangle(Brushes.Black, 0, 0, width * 2, maxHeihgt);
-
             List<OrderGraph> graphs = order.OrderGraphs;
-            int gcount = graphs.Count / 2, width = 640, height = 640;
+            int width = 640, height = 640;
             Rectangle rect = new Rectangle(0, 0, width, height);
-            Bitmap bmp = new Bitmap(width * 2, height);
+            Bitmap bmp = new Bitmap(width, height);
             Graphics graphics = Graphics.FromImage(bmp);
 
             try
             {
-                for (int i = 0; i < gcount; i++)
+                for (int i = 0; i < graphs.Count; i++)
                 {
-                    graphics.FillRectangle(Brushes.White, 0, 0, width * 2,
-                        height);
+                    graphics.FillRectangle(Brushes.White, 0, 0, width, height);
 
-                    rect.X = 0; //rect.Y = i * height;
-                    graphs[2 * i].DisplayGraph(graphics, rect);
-                    rect.X = width; //rect.Y = i * height;
-                    graphs[2 * i + 1].DisplayGraph(graphics, rect);
+                    graphs[i].DisplayGraph(graphics, rect);
 
                     bmp.Save(AupuReportForm.ReportPhoto + i + ".png");
                 }
-
-                if (2 * gcount < graphs.Count)
-                {
-                    graphics.FillRectangle(Brushes.White, 0, 0, width * 2,
-                        height);
-
-                    rect.X = 0; //rect.Y = a * height;
-                    rect.Width *= 2;
-                    graphs[2 * gcount].DisplayGraph(graphics, rect);
-
-                    bmp.Save(AupuReportForm.ReportPhoto + gcount + ".png");
-                }
-
-                bmp.Save(AupuReportForm.ReportPhoto);
             }
             catch (Exception ex)
             {
@@ -875,7 +905,6 @@ namespace CeilingDesigner
             }
         }
 
-        // 先不做报表
         AupuReportForm rptForm = null;
 
         public void Report()

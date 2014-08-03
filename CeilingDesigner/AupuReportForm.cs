@@ -67,29 +67,42 @@ namespace CeilingDesigner
                     reportDataSet.reportGoods.AddreportGoodsRow(rgrow);
             }
 
-            int gcount = graphs.Count / 2;
-            for (int i = 0; i < gcount; i++)
+            for (int i = 0; i < graphs.Count; i++)
             {
                 ReportDataSet.PhotosRow row = reportDataSet.Photos.NewPhotosRow();
                 row.BeginEdit();
-                row.Address = ReportPhoto + i + ".png";
+                row.Address = "file:///" + ReportPhoto + i + ".png";
                 row.EndEdit();
                 reportDataSet.Photos.AddPhotosRow(row);
             }
 
-            if (2 * gcount < graphs.Count)
-            {
-                ReportDataSet.PhotosRow row = reportDataSet.Photos.NewPhotosRow();
-                row.BeginEdit();
-                row.Address = ReportPhoto + gcount + ".png";
-                row.EndEdit();
-                reportDataSet.Photos.AddPhotosRow(row);
-            }
+            //int gcount = graphs.Count / 2;
+            //for (int i = 0; i < gcount; i++)
+            //{
+            //    ReportDataSet.PhotosRow row = reportDataSet.Photos.NewPhotosRow();
+            //    row.BeginEdit();
+            //    row.Address = "file:///" + ReportPhoto + i + ".png";
+            //    row.EndEdit();
+            //    reportDataSet.Photos.AddPhotosRow(row);
+            //}
 
-            ReportParameter cmpName = new ReportParameter("cmpName", SettingFile.GetCmpName());
-            ReportParameter rptName = new ReportParameter("rptName", SettingFile.GetRptName());
-            ReportParameter svrTel = new ReportParameter("svrTel", SettingFile.GetPhoto());
-            ReportParameter cmpAddress = new ReportParameter("cmpAddress", SettingFile.GetAddress());
+            //if (2 * gcount < graphs.Count)
+            //{
+            //    ReportDataSet.PhotosRow row = reportDataSet.Photos.NewPhotosRow();
+            //    row.BeginEdit();
+            //    row.Address = "file:///" + ReportPhoto + gcount + ".png";
+            //    row.EndEdit();
+            //    reportDataSet.Photos.AddPhotosRow(row);
+            //}
+
+            ReportParameter cmpName = new ReportParameter("cmpName", 
+                SettingFile.GetCmpName());
+            ReportParameter rptName = new ReportParameter("rptName", 
+                SettingFile.GetRptName());
+            ReportParameter svrTel = new ReportParameter("svrTel", 
+                SettingFile.GetPhoto());
+            ReportParameter cmpAddress = new ReportParameter("cmpAddress", 
+                SettingFile.GetAddress());
 
             ReportParameter customer = new ReportParameter("customer",
                     ordersRow.IscustomerNull() ? "" : ordersRow.customer);
@@ -109,28 +122,6 @@ namespace CeilingDesigner
                 cmpName, rptName, svrTel, cmpAddress,
                 customer, address, phone, install_date, salesman, remark
             });
-
-            //this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] 
-            //{
-            //    new ReportParameter("cmpName", SettingFile.GetCmpName()), 
-            //    new ReportParameter("rptName", SettingFile.GetRptName()), 
-            //    new ReportParameter("svrTel",  SettingFile.GetPhoto()),
-            //    new ReportParameter("cmpAddress", SettingFile.GetAddress()), 
-                
-            //    //new ReportParameter("imgPath", ReportPhoto + "0.png"),
-            //    new ReportParameter("customer", 
-            //        ordersRow.IscustomerNull() ? "" : ordersRow.customer),
-            //    new ReportParameter("address", 
-            //        ordersRow.IsaddressNull() ? "" : ordersRow.address),
-            //    new ReportParameter("phone", 
-            //        ordersRow.IsphoneNull() ? "" : ordersRow.phone),
-            //    new ReportParameter("install_date", ordersRow.Isinstall_dateNull() 
-            //        ? "" : ordersRow.install_date.ToShortDateString()),
-            //    new ReportParameter("salesman", 
-            //        ordersRow.IssalesmanNull() ? "" : ordersRow.salesman),
-            //    new ReportParameter("remark", 
-            //        ordersRow.IsremarkNull() ? "" : ordersRow.remark)
-            //});
         }
 
         private void AupuReportForm_Load(object sender, EventArgs e)

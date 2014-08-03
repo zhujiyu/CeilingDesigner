@@ -208,19 +208,28 @@ oEgIQ6kgEEyftCJZHj+B6APPedLwY5SwAPCS+lBDFbP+tYf8CCGaL3sY9ADgcR+9rjPPetrYRDdr74it
     <ReportItems>
       <List Name="list1">
         <ZIndex>9</ZIndex>
-        <Left>0.25cm</Left>
         <DataSetName>ReportDataSet_Photos</DataSetName>
+        <ReportItems>
+          <Image Name="image2">
+            <Sizing>AutoSize</Sizing>
+            <Source>External</Source>
+            <Style>
+              <FontFamily>宋体</FontFamily>
+            </Style>
+            <Value>=Fields!Address.Value</Value>
+          </Image>
+        </ReportItems>
         <Top>7.5cm</Top>
-        <Width>16.00529cm</Width>
+        <Width>16.25cm</Width>
         <Style>
           <FontFamily>宋体</FontFamily>
           <TextAlign>Center</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
         </Style>
-        <Height>2.98942cm</Height>
       </List>
       <Textbox Name="textbox29">
         <Top>6.25cm</Top>
-        <Width>2.53968cm</Width>
+        <Width>3.25cm</Width>
         <Style>
           <FontFamily>宋体</FontFamily>
           <PaddingLeft>2pt</PaddingLeft>
@@ -230,14 +239,14 @@ oEgIQ6kgEEyftCJZHj+B6APPedLwY5SwAPCS+lBDFbP+tYf8CCGaL3sY9ADgcR+9rjPPetrYRDdr74it
         </Style>
         <ZIndex>8</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>11.75cm</Left>
+        <Left>13cm</Left>
         <Height>0.63492cm</Height>
         <Value>审核人：</Value>
       </Textbox>
       <Textbox Name="textbox28">
         <rd:DefaultName>textbox28</rd:DefaultName>
         <Top>6.25cm</Top>
-        <Width>2.53968cm</Width>
+        <Width>3.5cm</Width>
         <Style>
           <FontFamily>宋体</FontFamily>
           <PaddingLeft>2pt</PaddingLeft>
@@ -247,7 +256,7 @@ oEgIQ6kgEEyftCJZHj+B6APPedLwY5SwAPCS+lBDFbP+tYf8CCGaL3sY9ADgcR+9rjPPetrYRDdr74it
         </Style>
         <ZIndex>7</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>7cm</Left>
+        <Left>8.75cm</Left>
         <Height>0.63492cm</Height>
         <Value>经办人：</Value>
       </Textbox>
@@ -403,6 +412,9 @@ oEgIQ6kgEEyftCJZHj+B6APPedLwY5SwAPCS+lBDFbP+tYf8CCGaL3sY9ADgcR+9rjPPetrYRDdr74it
           </TableRows>
         </Details>
         <Style>
+          <BorderColor>
+            <Default>DimGray</Default>
+          </BorderColor>
           <BorderStyle>
             <Default>Solid</Default>
           </BorderStyle>
@@ -787,7 +799,7 @@ oEgIQ6kgEEyftCJZHj+B6APPedLwY5SwAPCS+lBDFbP+tYf8CCGaL3sY9ADgcR+9rjPPetrYRDdr74it
         <Value>="客户名称："+Parameters!customer.Value</Value>
       </Textbox>
     </ReportItems>
-    <Height>10.75cm</Height>
+    <Height>23.75cm</Height>
   </Body>
   <Language>zh-CN</Language>
   <PageFooter>
@@ -797,7 +809,6 @@ oEgIQ6kgEEyftCJZHj+B6APPedLwY5SwAPCS+lBDFbP+tYf8CCGaL3sY9ADgcR+9rjPPetrYRDdr74it
         <rd:DefaultName>textbox3</rd:DefaultName>
         <Style>
           <Color>Gray</Color>
-          <BackgroundColor>WhiteSmoke</BackgroundColor>
           <FontFamily>宋体</FontFamily>
           <FontSize>8pt</FontSize>
           <TextAlign>Right</TextAlign>
