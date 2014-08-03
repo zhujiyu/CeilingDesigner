@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EA1E245B-DB05-4C15-9384-79E65F842B08}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CeilingDesigner</RootNamespace>
+    <AssemblyName>CeilingDesigner</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>xin.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddCeiling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCeiling.designer.cs">
+      <DependentUpon>AddCeiling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AupuBuckle.cs" />
+    <Compile Include="AupuReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AupuReportForm.Designer.cs">
+      <DependentUpon>AupuReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuckleList.cs" />
+    <Compile Include="BuckleNode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BuckleNode.designer.cs">
+      <DependentUpon>BuckleNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuckleSet.cs" />
+    <Compile Include="Ceiling.cs" />
+    <Compile Include="CeilingDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CeilingDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CeilSample.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CeilSample.designer.cs">
+      <DependentUpon>CeilSample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectString.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectString.designer.cs">
+      <DependentUpon>ConnectString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelpCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HelpCtrl.designer.cs">
+      <DependentUpon>HelpCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Keel.cs" />
+    <Compile Include="KeelSet.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderForm.designer.cs">
+      <DependentUpon>OrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OrderGraph.designer.cs">
+      <DependentUpon>OrderGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OrderInfo.designer.cs">
+      <DependentUpon>OrderInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PalaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PalaceForm.designer.cs">
+      <DependentUpon>PalaceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductManage.designer.cs">
+      <DependentUpon>ProductManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSet.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCeiling.resx">
+      <DependentUpon>AddCeiling.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AupuReport.rdlc" />
+    <EmbeddedResource Include="AupuReportForm.resx">
+      <DependentUpon>AupuReportForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuckleNode.resx">
+      <DependentUpon>BuckleNode.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CeilSample.resx">
+      <DependentUpon>CeilSample.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectString.resx">
+      <DependentUpon>ConnectString.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpCtrl.resx">
+      <DependentUpon>HelpCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderForm.resx">
+      <DependentUpon>OrderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderGraph.resx">
+      <DependentUpon>OrderGraph.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderInfo.resx">
+      <DependentUpon>OrderInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PalaceForm.resx">
+      <DependentUpon>PalaceForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductManage.resx">
+      <DependentUpon>ProductManage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectOrderForm.resx">
+      <DependentUpon>SelectOrderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileView.resx">
+      <DependentUpon>TileView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WallEdit.resx">
+      <DependentUpon>WallEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="CeilingDataSet.xsc">
+      <DependentUpon>CeilingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CeilingDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CeilingDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CeilingDataSet.xss">
+      <DependentUpon>CeilingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="palace.sql" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReportDataSet.xsc">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReportDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReportDataSet.xss">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Remark.cs" />
+    <Compile Include="ReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Revocation.cs" />
+    <Compile Include="SelectOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectOrderForm.designer.cs">
+      <DependentUpon>SelectOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingFile.cs" />
+    <Compile Include="sharedata.cs" />
+    <Compile Include="SZone.cs" />
+    <Compile Include="Tile.cs" />
+    <Compile Include="TileView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TileView.designer.cs">
+      <DependentUpon>TileView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WallEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WallEdit.designer.cs">
+      <DependentUpon>WallEdit.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\a.1.bmp" />
+    <Content Include="Resources\align_bottom.png" />
+    <Content Include="Resources\align_left.png" />
+    <Content Include="Resources\align_right.png" />
+    <Content Include="Resources\align_top.png" />
+    <Content Include="Resources\aupulogo2.png" />
+    <Content Include="Resources\database_active.png" />
+    <Content Include="Resources\delete.png" />
+    <Content Include="Resources\documents.png" />
+    <Content Include="Resources\document_notes.png" />
+    <Content Include="Resources\edit.ico" />
+    <Content Include="Resources\folder.png" />
+    <Content Include="Resources\folder_web.png" />
+    <Content Include="Resources\graphic_design.png" />
+    <Content Include="Resources\Image1.bmp" />
+    <Content Include="Resources\index_03.gif" />
+    <Content Include="Resources\kcmdf.png" />
+    <Content Include="Resources\kde_folder.ico" />
+    <Content Include="Resources\local_network.png" />
+    <Content Include="Resources\logo.gif" />
+    <Content Include="Resources\object_rotate_right.png" />
+    <Content Include="Resources\old_openofficeorg_draw.png" />
+    <Content Include="Resources\orange_user_trash.png" />
+    <Content Include="Resources\parcel.png" />
+    <Content Include="Resources\pen.png" />
+    <Content Include="Resources\pencil.png" />
+    <Content Include="Resources\redo_blue.png" />
+    <Content Include="Resources\redo_green.png" />
+    <Content Include="Resources\redo_yellow.png" />
+    <Content Include="Resources\refresh_yellow.png" />
+    <Content Include="Resources\report.png" />
+    <Content Include="Resources\room.png" />
+    <Content Include="Resources\room1.png" />
+    <Content Include="Resources\rotate.png" />
+    <Content Include="Resources\rotate1.png" />
+    <Content Include="Resources\rotate270anticlockwise3green.png" />
+    <Content Include="Resources\rotate360anticlockwise2red.png" />
+    <Content Include="Resources\rotate90anticlockwise2yellow.png" />
+    <Content Include="Resources\server_eteint_vert.png" />
+    <Content Include="Resources\settings.png" />
+    <Content Include="Resources\shape_align_bottom.png" />
+    <Content Include="Resources\shape_align_left.png" />
+    <Content Include="Resources\shape_align_right.png" />
+    <Content Include="Resources\shape_align_top.png" />
+    <Content Include="Resources\stats2.png" />
+    <Content Include="Resources\sub_black_delete.png" />
+    <Content Include="Resources\sub_blue_rotate_ccw.png" />
+    <Content Include="Resources\system_software_update.png" />
+    <Content Include="Resources\text_document.png" />
+    <Content Include="Resources\trasch_full.png" />
+    <Content Include="Resources\trash.png" />
+    <Content Include="Resources\undo.png" />
+    <Content Include="Resources\undo_blue.png" />
+    <Content Include="Resources\undo_green.png" />
+    <Content Include="Resources\undo_yellow.png" />
+    <Content Include="Resources\wall_blue.png" />
+    <Content Include="Resources\wall_green.png" />
+    <Content Include="Resources\wall_red.png" />
+    <Content Include="Resources\wall_yellow.png" />
+    <Content Include="xin.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
