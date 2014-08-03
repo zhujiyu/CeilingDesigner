@@ -71,6 +71,8 @@ namespace CeilingDesigner
             {
                 ReportDataSet.PhotosRow row = reportDataSet.Photos.NewPhotosRow();
                 row.BeginEdit();
+                row.ID = i;
+                row.Name = graphs[i].Ceiling.Name;
                 row.Address = "file:///" + ReportPhoto + i + ".png";
                 row.EndEdit();
                 reportDataSet.Photos.AddPhotosRow(row);
@@ -126,7 +128,6 @@ namespace CeilingDesigner
 
         private void AupuReportForm_Load(object sender, EventArgs e)
         {
-
             this.reportViewer1.RefreshReport();
 
             this.Text = "订单报表 - " + (ordersRow.IscustomerNull() ?

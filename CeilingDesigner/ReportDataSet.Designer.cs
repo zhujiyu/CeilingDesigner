@@ -638,6 +638,8 @@ namespace CeilingDesigner {
             
             private global::System.Data.DataColumn columnAddress;
             
+            private global::System.Data.DataColumn columnName;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public PhotosDataTable() {
                 this.TableName = "Photos";
@@ -683,6 +685,13 @@ namespace CeilingDesigner {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn NameColumn {
+                get {
+                    return this.columnName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -711,11 +720,12 @@ namespace CeilingDesigner {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public PhotosRow AddPhotosRow(string Address) {
+            public PhotosRow AddPhotosRow(string Address, string Name) {
                 PhotosRow rowPhotosRow = ((PhotosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Address};
+                        Address,
+                        Name};
                 rowPhotosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPhotosRow);
                 return rowPhotosRow;
@@ -743,6 +753,7 @@ namespace CeilingDesigner {
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
                 this.columnAddress = base.Columns["Address"];
+                this.columnName = base.Columns["Name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -751,6 +762,8 @@ namespace CeilingDesigner {
                 base.Columns.Add(this.columnID);
                 this.columnAddress = new global::System.Data.DataColumn("Address", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAddress);
+                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("PhotosKey1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -1140,6 +1153,21 @@ namespace CeilingDesigner {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string Name {
+                get {
+                    try {
+                        return ((string)(this[this.tablePhotos.NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“Photos”中列“Name”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablePhotos.NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public bool IsAddressNull() {
                 return this.IsNull(this.tablePhotos.AddressColumn);
             }
@@ -1147,6 +1175,16 @@ namespace CeilingDesigner {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public void SetAddressNull() {
                 this[this.tablePhotos.AddressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsNameNull() {
+                return this.IsNull(this.tablePhotos.NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetNameNull() {
+                this[this.tablePhotos.NameColumn] = global::System.Convert.DBNull;
             }
         }
         

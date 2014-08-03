@@ -186,6 +186,10 @@ oEgIQ6kgEEyftCJZHj+B6APPedLwY5SwAPCS+lBDFbP+tYf8CCGaL3sY9ADgcR+9rjPPetrYRDdr74it
           <DataField>ID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="Address">
           <DataField>Address</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -202,10 +206,27 @@ oEgIQ6kgEEyftCJZHj+B6APPedLwY5SwAPCS+lBDFbP+tYf8CCGaL3sY9ADgcR+9rjPPetrYRDdr74it
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <Width>6.59531in</Width>
+  <Width>6.65986in</Width>
   <Body>
     <ColumnSpacing>1cm</ColumnSpacing>
     <ReportItems>
+      <Textbox Name="textbox30">
+        <rd:DefaultName>textbox30</rd:DefaultName>
+        <Top>7.5cm</Top>
+        <Width>6.75cm</Width>
+        <Style>
+          <FontFamily>宋体</FontFamily>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>10</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.25cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>附：吊顶平面设计图</Value>
+      </Textbox>
       <List Name="list1">
         <ZIndex>9</ZIndex>
         <DataSetName>ReportDataSet_Photos</DataSetName>
@@ -219,7 +240,7 @@ oEgIQ6kgEEyftCJZHj+B6APPedLwY5SwAPCS+lBDFbP+tYf8CCGaL3sY9ADgcR+9rjPPetrYRDdr74it
             <Value>=Fields!Address.Value</Value>
           </Image>
         </ReportItems>
-        <Top>7.5cm</Top>
+        <Top>8.5cm</Top>
         <Width>16.25cm</Width>
         <Style>
           <FontFamily>宋体</FontFamily>
@@ -264,7 +285,6 @@ oEgIQ6kgEEyftCJZHj+B6APPedLwY5SwAPCS+lBDFbP+tYf8CCGaL3sY9ADgcR+9rjPPetrYRDdr74it
         <ZIndex>6</ZIndex>
         <DataSetName>ReportDataSet_reportGoods</DataSetName>
         <Top>3.5cm</Top>
-        <Width>16.25cm</Width>
         <Details>
           <TableRows>
             <TableRow>
@@ -569,22 +589,22 @@ oEgIQ6kgEEyftCJZHj+B6APPedLwY5SwAPCS+lBDFbP+tYf8CCGaL3sY9ADgcR+9rjPPetrYRDdr74it
         </Header>
         <TableColumns>
           <TableColumn>
-            <Width>4.52916cm</Width>
+            <Width>6.25cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.25cm</Width>
           </TableColumn>
           <TableColumn>
             <Width>2.66393cm</Width>
           </TableColumn>
           <TableColumn>
-            <Width>2.66393cm</Width>
+            <Width>1.75cm</Width>
           </TableColumn>
           <TableColumn>
-            <Width>2.13115cm</Width>
+            <Width>2cm</Width>
           </TableColumn>
           <TableColumn>
-            <Width>2.13115cm</Width>
-          </TableColumn>
-          <TableColumn>
-            <Width>2.13068cm</Width>
+            <Width>2cm</Width>
           </TableColumn>
         </TableColumns>
         <Height>2.25cm</Height>
@@ -799,7 +819,7 @@ oEgIQ6kgEEyftCJZHj+B6APPedLwY5SwAPCS+lBDFbP+tYf8CCGaL3sY9ADgcR+9rjPPetrYRDdr74it
         <Value>="客户名称："+Parameters!customer.Value</Value>
       </Textbox>
     </ReportItems>
-    <Height>23.75cm</Height>
+    <Height>24.75cm</Height>
   </Body>
   <Language>zh-CN</Language>
   <PageFooter>
@@ -807,6 +827,7 @@ oEgIQ6kgEEyftCJZHj+B6APPedLwY5SwAPCS+lBDFbP+tYf8CCGaL3sY9ADgcR+9rjPPetrYRDdr74it
     <ReportItems>
       <Textbox Name="textbox3">
         <rd:DefaultName>textbox3</rd:DefaultName>
+        <Width>9.99999cm</Width>
         <Style>
           <Color>Gray</Color>
           <FontFamily>宋体</FontFamily>

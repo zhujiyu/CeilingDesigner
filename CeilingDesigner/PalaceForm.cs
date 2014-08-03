@@ -883,6 +883,7 @@ namespace CeilingDesigner
             Rectangle rect = new Rectangle(0, 0, width, height);
             Bitmap bmp = new Bitmap(width, height);
             Graphics graphics = Graphics.FromImage(bmp);
+            Font font = new Font("宋体", 10, FontStyle.Regular, GraphicsUnit.Point);
 
             try
             {
@@ -891,6 +892,9 @@ namespace CeilingDesigner
                     graphics.FillRectangle(Brushes.White, 0, 0, width, height);
 
                     graphs[i].DisplayGraph(graphics, rect);
+                    SizeF size = graphics.MeasureString(graphs[i].Ceiling.Name, font);
+                    graphics.DrawString(graphs[i].Ceiling.Name, font, Brushes.Black, 
+                        (width - size.Width) / 2, height - 30);
 
                     bmp.Save(AupuReportForm.ReportPhoto + i + ".png");
                 }
