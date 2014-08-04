@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CeilingDesigner</RootNamespace>
-    <AssemblyName>CeilingDesigner</AssemblyName>
+    <AssemblyName>奥普1+N吊顶设计</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ApplicationIcon>xin.ico</ApplicationIcon>
