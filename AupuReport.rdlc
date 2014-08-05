@@ -210,54 +210,44 @@ oEgIQ6kgEEyftCJZHj+B6APPedLwY5SwAPCS+lBDFbP+tYf8CCGaL3sY9ADgcR+9rjPPetrYRDdr74it
   <Body>
     <ColumnSpacing>1cm</ColumnSpacing>
     <ReportItems>
-      <Rectangle Name="rectangle1">
-        <ZIndex>9</ZIndex>
-        <ReportItems>
-          <List Name="list1">
-            <ZIndex>1</ZIndex>
-            <DataSetName>ReportDataSet_Photos</DataSetName>
-            <ReportItems>
-              <Image Name="image2">
-                <Sizing>AutoSize</Sizing>
-                <Source>External</Source>
-                <Style>
-                  <FontFamily>宋体</FontFamily>
-                </Style>
-                <Value>=Fields!Address.Value</Value>
-              </Image>
-            </ReportItems>
-            <Top>1.5cm</Top>
-            <Style>
-              <BackgroundColor>IndianRed</BackgroundColor>
-              <FontFamily>宋体</FontFamily>
-              <TextAlign>Center</TextAlign>
-              <VerticalAlign>Middle</VerticalAlign>
-            </Style>
-          </List>
-          <Textbox Name="textbox30">
-            <rd:DefaultName>textbox30</rd:DefaultName>
-            <Top>0.5cm</Top>
-            <Width>6.75cm</Width>
-            <Style>
-              <FontFamily>宋体</FontFamily>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-            <CanGrow>true</CanGrow>
-            <Left>0.5cm</Left>
-            <Height>0.63492cm</Height>
-            <Value>附：吊顶平面设计图</Value>
-          </Textbox>
-        </ReportItems>
-        <Top>8.25cm</Top>
-        <Width>12.25cm</Width>
+      <Textbox Name="textbox30">
+        <rd:DefaultName>textbox30</rd:DefaultName>
+        <Top>7.5cm</Top>
+        <Width>6.75cm</Width>
         <Style>
-          <BackgroundColor>LightGrey</BackgroundColor>
           <FontFamily>宋体</FontFamily>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
         </Style>
-      </Rectangle>
+        <ZIndex>10</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.25cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>附：吊顶平面设计图</Value>
+      </Textbox>
+      <List Name="list1">
+        <ZIndex>9</ZIndex>
+        <DataSetName>ReportDataSet_Photos</DataSetName>
+        <ReportItems>
+          <Image Name="image2">
+            <Sizing>AutoSize</Sizing>
+            <Source>External</Source>
+            <Style>
+              <FontFamily>宋体</FontFamily>
+            </Style>
+            <Value>=Fields!Address.Value</Value>
+          </Image>
+        </ReportItems>
+        <Top>8.5cm</Top>
+        <Width>16.25cm</Width>
+        <Style>
+          <FontFamily>宋体</FontFamily>
+          <TextAlign>Center</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+      </List>
       <Textbox Name="textbox29">
         <Top>6.25cm</Top>
         <Width>3.25cm</Width>
@@ -829,7 +819,7 @@ oEgIQ6kgEEyftCJZHj+B6APPedLwY5SwAPCS+lBDFbP+tYf8CCGaL3sY9ADgcR+9rjPPetrYRDdr74it
         <Value>="客户名称："+Parameters!customer.Value</Value>
       </Textbox>
     </ReportItems>
-    <Height>18cm</Height>
+    <Height>24.75cm</Height>
   </Body>
   <Language>zh-CN</Language>
   <PageFooter>

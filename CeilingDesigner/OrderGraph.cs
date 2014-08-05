@@ -1468,11 +1468,15 @@ namespace CeilingDesigner
         {
             if (this.ceiling == null || this.ceiling.Length < 3)
                 return;
-            Bitmap bitmap = new Bitmap(1024, 768);
+
+            Rectangle rect = this.ceiling.DrawingRect;
+            Bitmap bitmap = new Bitmap(rect.Width + rect.X * 2, 
+                rect.Height + rect.Y * 2);
             Graphics g = Graphics.FromImage(bitmap);
 
             try
             {
+                //g.FillRectangle(Brushes.Aqua, rect);
                 this.Draw(g);
             }
             catch (Exception ex)

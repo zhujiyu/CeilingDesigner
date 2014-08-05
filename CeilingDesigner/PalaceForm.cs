@@ -822,60 +822,6 @@ namespace CeilingDesigner
             statForm.Show();
         }
 
-        //public void ReportGraph()
-        //{
-        //    //int maxHeihgt = gcount * height
-        //    //    + (2 * gcount < order.OrderGraphs.Count ? height : 0);
-
-        //    //Bitmap bmp = new Bitmap(width * 2, maxHeihgt);
-        //    //graphics.FillRectangle(Brushes.Black, 0, 0, width * 2, maxHeihgt);
-
-        //    List<OrderGraph> graphs = order.OrderGraphs;
-        //    int gcount = graphs.Count / 2;
-        //    int width = 640, height = 640;
-        //    Rectangle rect = new Rectangle(0, 0, width, height);
-        //    Bitmap bmp = new Bitmap(width * 2, height);
-        //    Graphics graphics = Graphics.FromImage(bmp);
-
-        //    try
-        //    {
-        //        for (int i = 0; i < gcount; i++)
-        //        {
-        //            graphics.FillRectangle(Brushes.White, 0, 0, width * 2,
-        //                height);
-
-        //            rect.X = 0; //rect.Y = i * height;
-        //            graphs[2 * i].DisplayGraph(graphics, rect);
-        //            rect.X = width; //rect.Y = i * height;
-        //            graphs[2 * i + 1].DisplayGraph(graphics, rect);
-
-        //            bmp.Save(AupuReportForm.ReportPhoto + i + ".png");
-        //        }
-
-        //        if (2 * gcount < graphs.Count)
-        //        {
-        //            graphics.FillRectangle(Brushes.White, 0, 0, width * 2,
-        //                height);
-
-        //            rect.X = 0; //rect.Y = a * height;
-        //            rect.Width *= 2;
-        //            graphs[2 * gcount].DisplayGraph(graphics, rect);
-
-        //            bmp.Save(AupuReportForm.ReportPhoto + gcount + ".png");
-        //        }
-
-        //        bmp.Save(AupuReportForm.ReportPhoto);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        System.Diagnostics.Debug.WriteLine(ex);
-        //    }
-        //    finally
-        //    {
-        //        graphics.Dispose();
-        //    }
-        //}
-
         public void ReportGraph()
         {
             List<OrderGraph> graphs = order.OrderGraphs;
@@ -890,10 +836,11 @@ namespace CeilingDesigner
                 for (int i = 0; i < graphs.Count; i++)
                 {
                     graphics.FillRectangle(Brushes.White, 0, 0, width, height);
-
                     graphs[i].DisplayGraph(graphics, rect);
-                    SizeF size = graphics.MeasureString(graphs[i].Ceiling.Name, font);
-                    graphics.DrawString(graphs[i].Ceiling.Name, font, Brushes.Black, 
+
+                    string name = "附图" + (i + 1) + "：" + graphs[i].Ceiling.Name;
+                    SizeF size = graphics.MeasureString(name, font);
+                    graphics.DrawString(name, font, Brushes.Black, 
                         (width - size.Width) / 2, height - 30);
 
                     bmp.Save(AupuReportForm.ReportPhoto + i + ".png");
