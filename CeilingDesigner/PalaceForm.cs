@@ -822,28 +822,60 @@ namespace CeilingDesigner
             statForm.Show();
         }
 
-        public void ReportGraph()
+        //public void ReportGraph()
+        //{
+        //    List<OrderGraph> graphs = order.OrderGraphs;
+        //    int width = 640, height = 640;
+        //    Rectangle rect = new Rectangle(0, 0, width, height);
+        //    Bitmap bmp = new Bitmap(width, height);
+        //    Graphics graphics = Graphics.FromImage(bmp);
+        //    Font font = new Font("宋体", 10, FontStyle.Regular, GraphicsUnit.Point);
+
+        //    try
+        //    {
+        //        for (int i = 0; i < graphs.Count; i++)
+        //        {
+        //            graphics.FillRectangle(Brushes.White, 0, 0, width, height);
+        //            graphs[i].DisplayGraph(graphics, rect, 100);
+
+        //            string name = "附图" + (i + 1) + "：" + graphs[i].Ceiling.Name;
+        //            SizeF size = graphics.MeasureString(name, font);
+        //            graphics.DrawString(name, font, Brushes.Black, 
+        //                (width - size.Width) / 2, height - 30);
+
+        //            bmp.Save(AupuReportForm.ReportPhoto + i + ".png");
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        System.Diagnostics.Debug.WriteLine(ex);
+        //    }
+        //    finally
+        //    {
+        //        graphics.Dispose();
+        //    }
+        //}
+
+        AupuReportForm rptForm = null;
+
+        public void Report()
         {
-            List<OrderGraph> graphs = order.OrderGraphs;
+            this.order.Statistic();
+            //this.ReportGraph();
+
             int width = 640, height = 640;
             Rectangle rect = new Rectangle(0, 0, width, height);
             Bitmap bmp = new Bitmap(width, height);
             Graphics graphics = Graphics.FromImage(bmp);
-            Font font = new Font("宋体", 10, FontStyle.Regular, GraphicsUnit.Point);
 
             try
             {
+                List<OrderGraph> graphs = order.OrderGraphs;
                 for (int i = 0; i < graphs.Count; i++)
                 {
-                    graphics.FillRectangle(Brushes.White, 0, 0, width, height);
-                    graphs[i].DisplayGraph(graphics, rect);
-
-                    string name = "附图" + (i + 1) + "：" + graphs[i].Ceiling.Name;
-                    SizeF size = graphics.MeasureString(name, font);
-                    graphics.DrawString(name, font, Brushes.Black, 
-                        (width - size.Width) / 2, height - 30);
-
-                    bmp.Save(AupuReportForm.ReportPhoto + i + ".png");
+                    graphics.FillRectangle(Brushes.White, rect);
+                    graphs[i].DisplayGraph(graphics, rect, 100);
+                    bmp.Save(AupuReportForm.ReportPhoto + (i + 1) + ".png");
                 }
             }
             catch (Exception ex)
@@ -854,14 +886,6 @@ namespace CeilingDesigner
             {
                 graphics.Dispose();
             }
-        }
-
-        AupuReportForm rptForm = null;
-
-        public void Report()
-        {
-            this.order.Statistic();
-            this.ReportGraph();
 
             if (rptForm == null || rptForm.IsDisposed)
                 rptForm = new AupuReportForm(this.order.OrderRow);
@@ -899,7 +923,7 @@ namespace CeilingDesigner
         private Bitmap DrawingGraph(OrderGraph graph, string title)
         {
             int width = 900, height = 600,
-                left = 600, top = 150, bottom = height - 30;
+                left = 600, top = 130, bottom = height - 30;
             RectangleF rect = new Rectangle(40, 100, width - 360,
                 height - 160);
 
@@ -935,7 +959,7 @@ namespace CeilingDesigner
                 if (graph.Ceiling.Width > graph.Ceiling.Height)
                     rect.Height = Math.Min(rect.Width * graph.Ceiling.Height
                         / graph.Ceiling.Width, rect.Height);
-                graph.DisplayGraph(graphics, rect);
+                graph.DisplayGraph(graphics, rect, 50);
 
                 CeilingDataSet.ordersRow orow = order.OrderRow;
                 if (order.Customer == null)

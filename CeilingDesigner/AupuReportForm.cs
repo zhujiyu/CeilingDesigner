@@ -67,12 +67,12 @@ namespace CeilingDesigner
                     reportDataSet.reportGoods.AddreportGoodsRow(rgrow);
             }
 
-            for (int i = 0; i < graphs.Count; i++)
+            for (int i = 1; i <= graphs.Count; i++)
             {
                 ReportDataSet.PhotosRow row = reportDataSet.Photos.NewPhotosRow();
                 row.BeginEdit();
                 row.ID = i;
-                row.Name = graphs[i].Ceiling.Name;
+                row.Name = "附图" + i + "：" + graphs[i-1].Ceiling.Name + " 吊顶设计图";
                 row.Address = "file:///" + ReportPhoto + i + ".png";
                 row.EndEdit();
                 reportDataSet.Photos.AddPhotosRow(row);

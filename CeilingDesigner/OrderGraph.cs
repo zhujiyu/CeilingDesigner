@@ -1464,7 +1464,8 @@ namespace CeilingDesigner
             }
         }
 
-        public void DisplayGraph(Graphics graphics, RectangleF dstRect)
+        public void DisplayGraph(Graphics graphics, RectangleF dstRect, 
+            int border)
         {
             if (this.ceiling == null || this.ceiling.Length < 3)
                 return;
@@ -1489,8 +1490,10 @@ namespace CeilingDesigner
             }
 
             RectangleF srcRect = this.ceiling.DrawingRect;
-            srcRect.X -= 80; srcRect.Y -= 80;
-            srcRect.Width += 160; srcRect.Height += 160;
+            srcRect.X -= border; srcRect.Y -= border;
+            srcRect.Width += border * 2; srcRect.Height += border * 2;
+            //srcRect.X -= 80; srcRect.Y -= 80;
+            //srcRect.Width += 160; srcRect.Height += 160;
 
             float sw = srcRect.Width / dstRect.Width,
                 sh = srcRect.Height / dstRect.Height;

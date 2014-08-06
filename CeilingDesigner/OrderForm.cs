@@ -40,7 +40,7 @@ namespace CeilingDesigner
         {
             TabPage page = sender as TabPage;
             OrderGraph graph = page.Tag as OrderGraph;
-            graph.DisplayGraph(e.Graphics, page.ClientRectangle);
+            graph.DisplayGraph(e.Graphics, page.ClientRectangle, 80);
         }
 
         public void SetData(CeilingDataSet.ordersRow ordersRow)
