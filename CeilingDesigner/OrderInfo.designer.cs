@@ -49,7 +49,7 @@
             this.remarkRichTextBox.Location = new System.Drawing.Point(81, 127);
             this.remarkRichTextBox.Name = "remarkRichTextBox";
             this.remarkRichTextBox.Size = new System.Drawing.Size(353, 60);
-            this.remarkRichTextBox.TabIndex = 39;
+            this.remarkRichTextBox.TabIndex = 56;
             this.remarkRichTextBox.Text = "";
             this.remarkRichTextBox.TextChanged += new System.EventHandler(this.remarkRichTextBox_TextChanged);
             // 
@@ -76,7 +76,7 @@
             this.installTextBox.Location = new System.Drawing.Point(82, 89);
             this.installTextBox.Name = "installTextBox";
             this.installTextBox.Size = new System.Drawing.Size(140, 21);
-            this.installTextBox.TabIndex = 37;
+            this.installTextBox.TabIndex = 54;
             this.installTextBox.TextChanged += new System.EventHandler(this.installTextBox_TextChanged);
             // 
             // label5
@@ -93,7 +93,7 @@
             this.phoneTextBox.Location = new System.Drawing.Point(82, 51);
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(140, 21);
-            this.phoneTextBox.TabIndex = 35;
+            this.phoneTextBox.TabIndex = 52;
             this.phoneTextBox.TextChanged += new System.EventHandler(this.phoneTextBox_TextChanged);
             // 
             // label4
@@ -119,7 +119,7 @@
             this.salesmanTextBox.Location = new System.Drawing.Point(295, 87);
             this.salesmanTextBox.Name = "salesmanTextBox";
             this.salesmanTextBox.Size = new System.Drawing.Size(140, 21);
-            this.salesmanTextBox.TabIndex = 31;
+            this.salesmanTextBox.TabIndex = 55;
             this.salesmanTextBox.TextChanged += new System.EventHandler(this.salesmanTextBox_TextChanged);
             // 
             // customerTextBox1
@@ -127,7 +127,7 @@
             this.customerTextBox1.Location = new System.Drawing.Point(294, 15);
             this.customerTextBox1.Name = "customerTextBox1";
             this.customerTextBox1.Size = new System.Drawing.Size(140, 21);
-            this.customerTextBox1.TabIndex = 27;
+            this.customerTextBox1.TabIndex = 51;
             this.customerTextBox1.TextChanged += new System.EventHandler(this.customerTextBox_TextChanged);
             // 
             // label3
@@ -153,7 +153,7 @@
             this.numberTextBox.Location = new System.Drawing.Point(83, 13);
             this.numberTextBox.Name = "numberTextBox";
             this.numberTextBox.Size = new System.Drawing.Size(140, 21);
-            this.numberTextBox.TabIndex = 29;
+            this.numberTextBox.TabIndex = 50;
             this.numberTextBox.TextChanged += new System.EventHandler(this.numberTextBox_TextChanged);
             this.numberTextBox.Leave += new System.EventHandler(this.numberTextBox_Leave);
             // 
@@ -162,7 +162,7 @@
             this.addressTextBox.Location = new System.Drawing.Point(295, 52);
             this.addressTextBox.Name = "addressTextBox";
             this.addressTextBox.Size = new System.Drawing.Size(140, 21);
-            this.addressTextBox.TabIndex = 33;
+            this.addressTextBox.TabIndex = 53;
             this.addressTextBox.Text = "北京市";
             this.addressTextBox.TextChanged += new System.EventHandler(this.addressTextBox_TextChanged);
             // 
