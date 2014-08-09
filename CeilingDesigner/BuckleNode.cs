@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
-using System.Linq;
+//using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -192,7 +192,8 @@ namespace CeilingDesigner
         {
             if (this.originalRow == null)
                 return;
-            Func<CeilingDataSet.productsRow, string> _loadImg = (row) => LoadPhoto(row);
+            LoadPhotoHandler _loadImg = (row) => LoadPhoto(row);
+            //Func<CeilingDataSet.productsRow, string> _loadImg = (row) => LoadPhoto(row);
 
             IAsyncResult asyncResult = _loadImg.BeginInvoke(this.originalRow, (result) =>
             {

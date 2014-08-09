@@ -357,8 +357,8 @@
     <model>600mm x 300mm</model>
     <category>扣板</category>
     <amount>34</amount>
-    <price>33</price>
-    <total>1122</total>
+    <price>33.26</price>
+    <total>1130.84</total>
   </goods>
   <goods>
     <ID>-16</ID>
@@ -367,8 +367,8 @@
     <model>600mm x 300mm</model>
     <category>扣板</category>
     <amount>14</amount>
-    <price>29</price>
-    <total>406</total>
+    <price>29.3</price>
+    <total>410.199982</total>
   </goods>
   <goods>
     <ID>-17</ID>
@@ -583,10 +583,10 @@
     <name>TKB-06AF015(0.68)</name>
     <category>扣板</category>
     <pattern />
-    <price>33</price>
+    <price>33.26</price>
     <amount>34</amount>
     <model>600mm x 300mm</model>
-    <total>1122</total>
+    <total>1130.84</total>
   </good_view>
   <good_view>
     <id>-17</id>
@@ -595,10 +595,10 @@
     <name>TKB-06扣板AF013(300x600)</name>
     <category>扣板</category>
     <pattern />
-    <price>29</price>
+    <price>29.3</price>
     <amount>14</amount>
     <model>600mm x 300mm</model>
-    <total>406</total>
+    <total>410.199982</total>
   </good_view>
   <good_view>
     <id>-18</id>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
+//using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -11,8 +11,6 @@ namespace CeilingDesigner
 {
     public partial class ProductManage : Form
     {
-        //BuckleList list = new BuckleList();
-        //DataView classView = new DataView();
         DataView productView = new DataView();
         private int msec = 500;
         private bool changed = false;
@@ -23,18 +21,6 @@ namespace CeilingDesigner
         }
 
         private CeilingDataSet set = null;
-
-        //public CeilingDataSet Set
-        //{
-        //    get { return set; }
-        //    set
-        //    {
-        //        set = value;
-        //        productView.Table = set.products;
-        //        classView.Table = set.product_classes;
-        //        classView.RowFilter = "type = 'surface'";
-        //    }
-        //}
 
         private bool HasChanged
         {
@@ -752,7 +738,7 @@ namespace CeilingDesigner
             this.splitContainer1.Enabled = true;
         }
 
-        private void progressStart(IAsyncResult asyncResult, Action close, int _msec)
+        private void progressStart(IAsyncResult asyncResult, VoidAction close, int _msec)
         {
             // 本函数会执行两次，第一次在主线程中，this.InvokeRequired 是 false，
             // 第二次在辅助线程中，this.InvokeRequired 是 true
@@ -766,7 +752,7 @@ namespace CeilingDesigner
                 this.progressBar1.Step = 10;
                 _progressIncrease();
 
-                Action func = () => progressStart(asyncResult, close, 200);
+                VoidAction func = () => progressStart(asyncResult, close, 200);
                 func.BeginInvoke(null, null);
             }
             else // 在辅助线程中，循环推进进度条
@@ -774,10 +760,12 @@ namespace CeilingDesigner
                 while (!asyncResult.IsCompleted)
                 {
                     System.Threading.Thread.Sleep(msec);
-                    this.BeginInvoke(new Action(_progressIncrease));
+                    this.BeginInvoke(new VoidAction(_progressIncrease));
+                    //this.BeginInvoke(new Action(_progressIncrease));
                 }
 
-                this.BeginInvoke(new Action(_progressCompleted), null);
+                this.BeginInvoke(new VoidAction(_progressCompleted), null);
+                //this.BeginInvoke(new Action(_progressCompleted), null);
                 if (close != null)
                 {
                     this.BeginInvoke(close, null);
@@ -846,7 +834,8 @@ namespace CeilingDesigner
         {
             if (!this.HasChanged)
                 return;
-            Action func = () => Save();
+            VoidAction func = () => Save();
+            //Action func = () => Save();
 
             IAsyncResult asyncResult = func.BeginInvoke((result) =>
             {
@@ -872,7 +861,8 @@ namespace CeilingDesigner
             }
             else if (dr == System.Windows.Forms.DialogResult.Yes)
             {
-                Action func = () => Save();
+                //Action func = () => Save();
+                VoidAction func = () => Save();
 
                 IAsyncResult asyncResult = func.BeginInvoke((result) =>
                 {
@@ -893,413 +883,3 @@ namespace CeilingDesigner
         }
     }
 }
-
-//this.删除toolStripButton2.Enabled = false;
-//this.编辑toolStripButton1.Enabled = false;
-//this.新建NToolStripButton.Enabled = false;
-//this.保存SToolStripButton.Enabled = false;
-
-//this.删除toolStripButton2.Enabled = true;
-//this.编辑toolStripButton1.Enabled = true;
-//this.新建NToolStripButton.Enabled = true;
-//this.保存SToolStripButton.Enabled = true;
-
-//Encoding utf8 = Encoding.GetEncoding("utf-8");
-//string path = ProductNode.PhotoPath(row.product_classesRow);
-//string _url = "http://tianezhen.com/AUPU/move.php?file=" + row.photo + "&path=" + path;
-//System.Net.WebRequest request = System.Net.WebRequest.Create(_url);
-//request.GetResponse();
-
-//private TreeNode copyTreeNode = null;
-
-//public TreeNode CopyTreeNode
-//{
-//    set
-//    {
-//        if (copyTreeNode != null)
-//            copyTreeNode.BackColor = Color.White;
-//        copyTreeNode = value;
-//        cut = false;
-//    }
-//}
-
-//public TreeNode CutTreeNode
-//{
-//    set
-//    {
-//        if (copyTreeNode != null)
-//            copyTreeNode.BackColor = Color.White;
-//        copyTreeNode = value;
-//        if (copyTreeNode != null)
-//            copyTreeNode.BackColor = Color.Gray;
-//        cut = true;
-//    }
-//}
-
-//MySql.Data.MySqlClient.MySqlDataAdapter adapter = GetInsertAdapter();
-//UploadPhoto(added as palaceDataSet.productsDataTable);
-
-//private MySql.Data.MySqlClient.MySqlDataAdapter GetInsertPCsAdapter()
-//{
-//    MySql.Data.MySqlClient.MySqlParameter param;
-//    MySql.Data.MySqlClient.MySqlDataAdapter adapter = new MySql.Data.MySqlClient.MySqlDataAdapter();
-
-//    adapter.InsertCommand = new MySql.Data.MySqlClient.MySqlCommand();
-//    adapter.InsertCommand.Connection = ShareData.Connection;
-//    adapter.InsertCommand.CommandText = "INSERT INTO `product_classes` (`ID`, `name`, `parent_class_id`, `type`, `category`, `cl" +
-//        "one_id`, `withchildren`) VALUES (@ID, @name, @parent_class_id, @type, @category, @clo" +
-//        "ne_id, @withchildren)";
-//    adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-
-//    param = new global::MySql.Data.MySqlClient.MySqlParameter();
-//    param.ParameterName = "@ID";
-//    param.DbType = global::System.Data.DbType.UInt32;
-//    param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
-//    param.IsNullable = true;
-//    param.SourceColumn = "ID";
-//    adapter.InsertCommand.Parameters.Add(param);
-//    param = new global::MySql.Data.MySqlClient.MySqlParameter();
-//    param.ParameterName = "@name";
-//    param.DbType = global::System.Data.DbType.String;
-//    param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-//    param.IsNullable = true;
-//    param.SourceColumn = "name";
-//    adapter.InsertCommand.Parameters.Add(param);
-//    param = new global::MySql.Data.MySqlClient.MySqlParameter();
-//    param.ParameterName = "@parent_class_id";
-//    param.DbType = global::System.Data.DbType.UInt32;
-//    param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
-//    param.IsNullable = true;
-//    param.SourceColumn = "parent_class_id";
-//    adapter.InsertCommand.Parameters.Add(param);
-//    param = new global::MySql.Data.MySqlClient.MySqlParameter();
-//    param.ParameterName = "@type";
-//    param.DbType = global::System.Data.DbType.StringFixedLength;
-//    param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
-//    param.IsNullable = true;
-//    param.SourceColumn = "type";
-//    adapter.InsertCommand.Parameters.Add(param);
-//    param = new global::MySql.Data.MySqlClient.MySqlParameter();
-//    param.ParameterName = "@category";
-//    param.DbType = global::System.Data.DbType.String;
-//    param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-//    param.IsNullable = true;
-//    param.SourceColumn = "category";
-//    adapter.InsertCommand.Parameters.Add(param);
-//    param = new global::MySql.Data.MySqlClient.MySqlParameter();
-//    param.ParameterName = "@clone_id";
-//    param.DbType = global::System.Data.DbType.UInt32;
-//    param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
-//    param.IsNullable = true;
-//    param.SourceColumn = "clone_id";
-//    adapter.InsertCommand.Parameters.Add(param);
-//    param = new global::MySql.Data.MySqlClient.MySqlParameter();
-//    param.ParameterName = "@withchildren";
-//    param.DbType = global::System.Data.DbType.SByte;
-//    param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-//    param.IsNullable = true;
-//    param.SourceColumn = "withchildren";
-//    adapter.InsertCommand.Parameters.Add(param);
-//    adapter.InsertCommand.Connection = ShareData.Connection;
-
-//    palaceDataSetTableAdapters.product_classesTableAdapter pcAdapter = new palaceDataSetTableAdapters.product_classesTableAdapter();
-//    pcAdapter.Connection = ShareData.Connection;
-//    adapter.SelectCommand = pcAdapter.Adapter.SelectCommand;
-//    adapter.DeleteCommand = pcAdapter.Adapter.DeleteCommand;
-//    adapter.UpdateCommand = pcAdapter.Adapter.UpdateCommand;
-//    return adapter;
-//}
-
-//palaceDataSetTableAdapters.productsTableAdapter pAdapter = new palaceDataSetTableAdapters.productsTableAdapter();
-//pAdapter.Connection = ShareData.Connection;
-//pAdapter.Adapter.DeleteCommand.CommandText = @"DELETE FROM `products` WHERE (`ID` = @Original_ID)";
-//pAdapter.Adapter.DeleteCommand.CommandText = @"DELETE FROM `products` WHERE ((`ID` = @Original_ID) AND ((@IsNull_name = 1 AND `name` IS NULL) OR (`name` = @Original_name)) AND ((@IsNull_width = 1 AND `width` IS NULL) OR (`width` = @Original_width)) AND ((@IsNull_height = 1 AND `height` IS NULL) OR (`height` = @Original_height)) AND ((@IsNull_price = 1 AND `price` IS NULL) OR (`price` = @Original_price)) AND ((@IsNull_class_id = 1 AND `class_id` IS NULL) OR (`class_id` = @Original_class_id)) AND ((@IsNull_photo = 1 AND `photo` IS NULL) OR (`photo` = @Original_photo)))";
-//pAdapter.Adapter.DeleteCommand.CommandText = @"DELETE FROM `products` WHERE ((`ID` = @Original_ID) AND ((@IsNull_name = 1 AND `name` IS NULL) OR (`name` = @Original_name)) AND ((@IsNull_pattern = 1 AND `pattern` IS NULL) OR (`pattern` = @Original_pattern)) AND ((@IsNull_color = 1 AND `color` IS NULL) OR (`color` = @Original_color)) AND ((@IsNull_width = 1 AND `width` IS NULL) OR (`width` = @Original_width)) AND ((@IsNull_height = 1 AND `height` IS NULL) OR (`height` = @Original_height)) AND ((@IsNull_length = 1 AND `length` IS NULL) OR (`length` = @Original_length)) AND ((@IsNull_unit = 1 AND `unit` IS NULL) OR (`unit` = @Original_unit)) AND ((@IsNull_price = 1 AND `price` IS NULL) OR (`price` = @Original_price)) AND ((@IsNull_remarks = 1 AND `remarks` IS NULL) OR (`remarks` = @Original_remarks)) AND ((@IsNull_class_id = 1 AND `class_id` IS NULL) OR (`class_id` = @Original_class_id)) AND ((@IsNull_photo = 1 AND `photo` IS NULL) OR (`photo` = @Original_photo)))";
-
-//private void _test()
-//{
-//    System.Threading.Thread.Sleep(5000);
-//}
-
-//this.progressBar1.Text = desc;
-//this.progressBar1.Text = (int)((float)this.progressBar1.Value * 100.0f / (float)this.progressBar1.Maximum) + "%";
-
-//if (this.msec >= 100)
-//{
-//    Action func = () => _test();
-//    IAsyncResult asyncResult = func.BeginInvoke((result) => { }, null);
-//    this.progressStart(asyncResult, () =>
-//    {
-//        this.msec = 0;
-//        this.Close();
-//    }, 250);
-//    e.Cancel = true;
-//}
-
-//if (dr == System.Windows.Forms.DialogResult.Cancel)
-//{
-//    e.Cancel = true;
-//}
-//else if (dr == System.Windows.Forms.DialogResult.Yes)
-//{
-//    this.msec = 100;
-//    Action func = () => Save();
-//    IAsyncResult asyncResult = func.BeginInvoke((result) => { }, null);
-//    this.progressStart(asyncResult);
-//    e.Cancel = true;
-//}
-//else
-//{
-//    set.product_classes.RejectChanges();
-//    set.products.RejectChanges();
-//}
-
-//if (this.msec == 0)
-//{
-//    this.msec = 100;
-//    Action func = () => _test();
-//    IAsyncResult asyncResult = func.BeginInvoke((result) => { }, null);
-//    this.progressStart(asyncResult);
-//    e.Cancel = true;
-//}
-
-//private void progressStart(IAsyncResult asyncResult, int msec = 150)
-//{
-//    this.splitContainer1.Enabled = false;
-//    this.panel2.Visible = true;
-
-//    this.progressBar1.Value = 0;
-//    this.progressBar1.Step = 10;
-//    _progressIncrease();
-
-//    while (!asyncResult.IsCompleted)
-//    {
-//        System.Threading.Thread.Sleep(msec);
-//        _progressIncrease();
-//    }
-
-//    this.splitContainer1.Enabled = true;
-//    this.panel2.Visible = false;
-//}
-
-//private void progressStart(int msec = 150)
-//{
-//    // 本函数会执行两次，第一次在主线程中，this.InvokeRequired 是 false，
-//    // 第二次在辅助线程中，this.InvokeRequired 是 true
-//    if (!this.InvokeRequired) // 在主线程中，重新开一个线程操控进度条
-//    {
-//        this.splitContainer1.Enabled = false;
-//        this.panel2.Visible = true;
-
-//        this.progressBar1.Value = 0;
-//        this.progressBar1.Step = 10;
-//        _progressIncrease();
-
-//        Action func = () => progressStart(msec);
-//        func.BeginInvoke(null, null);
-//    }
-//    else // 在辅助线程中，循环推进进度条
-//    {
-//        while (!this.saved)
-//        {
-//            System.Threading.Thread.Sleep(msec);
-//            this.BeginInvoke(new Action(_progressIncrease));
-//        }
-
-//        this.BeginInvoke(new Action(_progressCompleted), null);
-//    }
-//}
-
-//try
-//{
-//    MySql.Data.MySqlClient.MySqlDataAdapter adapter = GetInsertAdapter();
-//    adapter.Update(set.product_classes);
-//    set.product_classes.AcceptChanges();
-//    //GetInsertAdapter().Update(set.product_classes);
-//}
-//catch (Exception ex)
-//{
-//    System.Diagnostics.Debug.WriteLine(ex);
-//}
-
-//palaceDataSetTableAdapters.productsTableAdapter pAdapter = new palaceDataSetTableAdapters.productsTableAdapter();
-//pAdapter.Connection = ShareData.Connection;
-//try
-//{
-//    DataTable added = set.products.GetChanges(DataRowState.Added);
-//    if (added != null)
-//        UploadPhoto(added as palaceDataSet.productsDataTable);
-//    ProductList.RemoveProducts();
-//    pAdapter.Update(set.products);
-//    set.products.AcceptChanges();
-//}
-//catch (Exception ex)
-//{
-//    System.Diagnostics.Debug.WriteLine(ex);
-//}
-
-////set.AcceptChanges();
-//ProductList.WriteXml(set);
-
-//private void SaveTip()
-//{
-//    this.splitContainer1.Enabled = false;
-//    this.panel2.Visible = true;
-//    //this.progressStart();
-//}
-
-//adapter.SelectCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
-//adapter.SelectCommand.Connection = ShareData.Connection;
-//adapter.SelectCommand.CommandText = "SELECT ID, name, parent_class_id, type, category, clone_id, withchildren\r\nFROM pr oduct_classes";
-//adapter.SelectCommand.CommandType = global::System.Data.CommandType.Text;
-
-//if (node.Level == 0)
-//{
-//    //DataView view = new DataView();
-//    //view.Table = set.product_classes;
-//    //view.RowFilter = "type = 'surface' and parent_class_id = 100000000 and name = ";
-//    crow = AddChildClass(100000000);
-//    //CloneClass(parent_row.ID, crow.ID);
-//}
-//else
-//{
-//    crow = AddChildClass(parent_row.ID);
-//}
-
-//this.label1.Text = ProductNode.PhotoPath(row);
-//this.label1.Location = new Point(0, 0);
-//this.panel1.Location = new Point(0, 20);
-
-//pNode.MouseClick += new MouseEventHandler(pNode_MouseClick);
-//pNode.Click += new EventHandler(pNode_Click);
-//int i = this.panel1.Controls.Count, width = 120, rows = this.panel1.Height / width;
-//pNode.Location = new Point((i / rows) * width + 10, (i % rows) * width + 10);
-
-//private void _treeNode(TreeNodeCollection nodes)//(TreeNode node)
-//{
-//    for (int i = 0; i < nodes.Count; i++)
-//    {
-//        nodes[i].ContextMenuStrip = this.contextMenuStrip2;
-//        _treeNode(nodes[i].Nodes);
-//    }
-//}
-
-//uint max_id = MaxClassID();
-//max_id = max_id / 100000 + 1;
-//max_id = max_id * 100000;
-
-//palaceDataSet.product_classesRow prow = node.Tag as palaceDataSet.product_classesRow;
-//palaceDataSet.product_classesRow crow = set.product_classes.Newproduct_classesRow();
-//crow.ID = MaxClassID() + 100000;
-//crow.name = "未命名分组";
-//crow.parent_class_id = prow.ID;
-//crow.type = "surface";
-//crow.clone_id = 0;
-//set.product_classes.Addproduct_classesRow(crow);
-
-//this.treeView1.SelectedNode.LastNode.BeginEdit();
-
-//string path = ProductNode.PhotoPath(crow);
-//string[] _ps = path.Split('/');
-//string _path = ShareData.GetDataPath();
-
-//for (int i = 0; i < _ps.Length; i++)
-//{
-//    _path += _ps[i] + "/";
-//    if (!System.IO.Directory.Exists(_path))
-//        System.IO.Directory.CreateDirectory(_path);
-//}
-
-//private void InsertProduct2DB(palaceDataSet.product_classesDataTable pcs)
-//{
-//    MySql.Data.MySqlClient.MySqlDataAdapter adapter = GetInsertAdapter();
-//    adapter.Update(pcs);
-//    pcs.AcceptChanges();
-//}
-
-//palaceDataSetTableAdapters.product_classesTableAdapter pcAdapter = new palaceDataSetTableAdapters.product_classesTableAdapter();
-//pcAdapter.Connection = ShareData.Connection;
-//try
-//{
-//    palaceDataSet.product_classesDataTable pc = set.product_classes.GetChanges(DataRowState.Added) as palaceDataSet.product_classesDataTable;
-//    if (pc != null && pc.Count > 0)
-//    {
-//        GetInsertAdapter().Update(pc);
-//        pc.AcceptChanges();
-//    }
-//    pcAdapter.Update(set.product_classes);
-//}
-//catch (Exception ex)
-//{
-//    System.Diagnostics.Debug.WriteLine(ex);
-//}
-
-//ProductNode current = null;
-
-//public ProductNode Current
-//{
-//    get { return current; }
-//    set
-//    {
-//        if (current != null)
-//        {
-//            if (current.IsEditing)
-//                current.UnEdit();
-//            current.BackColor = Color.Transparent;
-//            current.ForeColor = Color.Black;
-//        }
-//        current = value;
-//        if (current != null)
-//        {
-//            current.BackColor = SystemColors.ActiveCaption;
-//            current.ForeColor = Color.White;
-//        }
-//    }
-//}
-
-//string path = System.Web.HttpUtility.UrlEncode(ProductNode.PhotoPath(row.product_classesRow), utf8);
-//string _url = "http://tianezhen.com/AUPU/move.php?file=" + System.Web.HttpUtility.UrlEncode(row.photo, utf8) + "&path=tmp/" + path;
-//System.Net.WebRequest request = System.Net.WebRequest.Create(_url);
-//request.Method = "GET";
-//request.GetResponse();
-
-//int i = this.splitContainer1.Panel2.Controls.Count;
-//int width = 120, rows = this.splitContainer1.Panel2.Height / width;
-//this.splitContainer1.Panel2.Controls.Add(pNode);
-
-//if (e.Node.Tag is palaceDataSet.product_classesRow)
-//{
-//    palaceDataSet.product_classesRow row = e.Node.Tag as palaceDataSet.product_classesRow;
-//    this.productView.RowFilter = "class_id = " + row.ID.ToString();
-//    //int width = 120, rows = this.splitContainer1.Panel2.Height / width;
-
-//    for (int i = 0; i < this.productView.Count; i++)
-//    {
-//        ProductNode pNode = new ProductNode(this.productView[i].Row as palaceDataSet.productsRow);
-//        AddProduct(pNode);
-//    }
-//}
-
-//for (int i = 0; i < ctrls.Count; i++)
-//{
-//    ProductNode pNode = ctrls[i] as ProductNode;
-//    pNode.MouseDown += new MouseEventHandler(pNode_MouseDown);
-//    pNode.MouseUp += new MouseEventHandler(pNode_MouseUp);
-//    pNode.MouseMove += new MouseEventHandler(pNode_MouseMove);
-//    pNode.MouseHover += new EventHandler(pNode_MouseHover);
-//    pNode.ContextMenuStrip = this.productContextMenuStrip;
-//}
-
-//PictureBox box = new PictureBox();
-//box.Size = new System.Drawing.Size(300, 300);
-//box.SizeMode = PictureBoxSizeMode.Zoom;
-//box.Location = new Point(400, 50);
-//box.Image = bmp;
-//box.BackColor = Color.Black;
-//this.splitContainer1.Panel2.Controls.Add(box);
-//bmp.Save("D://32dsfs.jpg");
-
-//TextBox box = new TextBox();
-//box.Text = this.treeView1.SelectedNode.Text;
-//this.treeView1.Controls.Add(box);
-//box.Location = this.treeView1.SelectedNode.IsEditing

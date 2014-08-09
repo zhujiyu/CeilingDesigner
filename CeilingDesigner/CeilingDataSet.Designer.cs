@@ -569,7 +569,8 @@ namespace CeilingDesigner {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ceiling_sample_wallesDataTable : global::System.Data.TypedTableBase<ceiling_sample_wallesRow> {
+        public partial class ceiling_sample_wallesDataTable : System.Data.DataTable //global::System.Data.TypedTableBase<ceiling_sample_wallesRow> 
+        {
             
             private global::System.Data.DataColumn columnID;
             
@@ -884,7 +885,8 @@ namespace CeilingDesigner {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ceiling_samplesDataTable : global::System.Data.TypedTableBase<ceiling_samplesRow> {
+        public partial class ceiling_samplesDataTable : System.Data.DataTable //global::System.Data.TypedTableBase<ceiling_samplesRow> 
+        {
             
             private global::System.Data.DataColumn columnID;
             
@@ -1147,7 +1149,8 @@ namespace CeilingDesigner {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ceiling_wallesDataTable : global::System.Data.TypedTableBase<ceiling_wallesRow> {
+        public partial class ceiling_wallesDataTable : System.Data.DataTable //global::System.Data.TypedTableBase<ceiling_wallesRow> 
+        {
             
             private global::System.Data.DataColumn columnID;
             
@@ -1448,7 +1451,8 @@ namespace CeilingDesigner {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ceilingsDataTable : global::System.Data.TypedTableBase<ceilingsRow> {
+        public partial class ceilingsDataTable : System.Data.DataTable //global::System.Data.TypedTableBase<ceilingsRow> 
+        {
             
             private global::System.Data.DataColumn columnID;
             
@@ -1954,7 +1958,8 @@ namespace CeilingDesigner {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class goodsDataTable : global::System.Data.TypedTableBase<goodsRow> {
+        public partial class goodsDataTable : System.Data.DataTable //global::System.Data.TypedTableBase<goodsRow> 
+        {
             
             private global::System.Data.DataColumn columnID;
             
@@ -2297,7 +2302,8 @@ namespace CeilingDesigner {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ordersDataTable : global::System.Data.TypedTableBase<ordersRow> {
+        public partial class ordersDataTable : System.Data.DataTable //global::System.Data.TypedTableBase<ordersRow> 
+        {
             
             private global::System.Data.DataColumn columnID;
             
@@ -2656,7 +2662,8 @@ namespace CeilingDesigner {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class product_classesDataTable : global::System.Data.TypedTableBase<product_classesRow> {
+        public partial class product_classesDataTable : System.Data.DataTable //global::System.Data.TypedTableBase<product_classesRow> 
+        {
             
             private global::System.Data.DataColumn columnID;
             
@@ -2966,7 +2973,8 @@ namespace CeilingDesigner {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class productsDataTable : global::System.Data.TypedTableBase<productsRow> {
+        public partial class productsDataTable : System.Data.DataTable //global::System.Data.TypedTableBase<productsRow> 
+        {
             
             private global::System.Data.DataColumn columnID;
             
@@ -3354,7 +3362,8 @@ namespace CeilingDesigner {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class szonesDataTable : global::System.Data.TypedTableBase<szonesRow> {
+        public partial class szonesDataTable : System.Data.DataTable //global::System.Data.TypedTableBase<szonesRow> 
+        {
             
             private global::System.Data.DataColumn columnID;
             
@@ -3669,7 +3678,8 @@ namespace CeilingDesigner {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class good_viewDataTable : global::System.Data.TypedTableBase<good_viewRow> {
+        public partial class good_viewDataTable : System.Data.DataTable //global::System.Data.TypedTableBase<good_viewRow> 
+        {
             
             private global::System.Data.DataColumn columnid;
             
