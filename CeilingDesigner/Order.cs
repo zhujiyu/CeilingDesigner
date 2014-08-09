@@ -16,13 +16,6 @@ namespace CeilingDesigner
             get { return orderRow; }
         }
 
-        //private CeilingDataSet ceilingDataSet = null;
-
-        //public CeilingDataSet CeilingDataSet
-        //{
-        //    get { return ceilingDataSet; }
-        //}
-
         private List<OrderGraph> orderGraphs = new List<OrderGraph>();
 
         public List<OrderGraph> OrderGraphs
@@ -53,12 +46,6 @@ namespace CeilingDesigner
 
         PalaceForm palaceForm = null;
 
-        //public PalaceForm PalaceForm
-        //{
-        //    get { return palaceForm; }
-        //    //set { palaceForm = value; }
-        //}
-
         public int ID
         {
             get
@@ -69,18 +56,6 @@ namespace CeilingDesigner
                     return 0;
             }
         }
-
-        //public string Number
-        //{
-        //    get
-        //    {
-        //        if (this.orderRow != null && !this.orderRow.IsnumberNull()
-        //            && this.orderRow.number != "")
-        //            return this.orderRow.number;
-        //        else
-        //            return "新建订单";
-        //    }
-        //}
 
         public string Customer
         {
@@ -134,8 +109,6 @@ namespace CeilingDesigner
             get { return cwAdapter; }
         }
 
-        //OrderInfo orderInfo = new OrderInfo();
-
         public Order(PalaceForm frm)
         {
             this.palaceForm = frm;
@@ -150,7 +123,6 @@ namespace CeilingDesigner
             if (!this.editing)
                 return;
             this.Change();
-            //palaceForm.Text = 
         }
 
         public void InitMysqlDB()
@@ -161,8 +133,6 @@ namespace CeilingDesigner
             this.goodAdapter.Connection = ShareData.Connection;
             this.gvAdapter.Connection = ShareData.Connection;
 
-            //this.ceilingAdapter.Adapter.UpdateCommand.CommandText = "UPDATE `ceilings` SET `order_id` = @order_id, `name` = @name, `lines` = @lines, `display_left` = @display_left, `display_top` = @display_top, `display_width` = @display_width, `display_height` = @display_height, `left` = @left, `top` = @top, `width` = @width, `height` = @height, `scale` = @scale, `products` = @products, `keels` = @keels, `paint_width` = @paint_width, `paint_height` = @paint_height, `rows` = @rows, `clomns` = @clomns WHERE (`ID` = @Original_ID)";
-            //this.orderInfo.OrderAdapter = this.orderAdapter;
             this.ceilingAdapter.Adapter.UpdateCommand.CommandText = "UPDATE `ceilings` SET `order_id` = @order_id, `name` = @name, `lines` = @lines, `display_left` = @display_left, `display_top` = @display_top, `display_width` = @display_width, `display_height` = @display_height, `left` = @left, `top` = @top, `width` = @width, `height` = @height, `scale` = @scale, `paint_width` = @paint_width, `paint_height` = @paint_height, `rows` = @rows, `clomns` = @clomns, `products` = @products, `appendix` = @appendix, `keels` = @keels WHERE (`ID` = @Original_ID)";
             this.ceilingAdapter.Adapter.DeleteCommand.CommandText = "DELETE FROM ceilings WHERE (ID = @Original_ID) AND (@IsNull_order_id = 1 AND order_id IS NULL OR order_id = @Original_order_id) ";
         }
@@ -230,11 +200,6 @@ namespace CeilingDesigner
 
             sumrow.total = sum;
         }
-
-        //this.tabControl1.Controls.Clear();
-        //this.orderGraphs[i].Statistic();
-        //this.DisplayGraph(this.orderGraphs[i]);
-        //ceilingDataSet.good_view.AcceptChanges();
 
         public void Statistic()
         {
@@ -492,13 +457,6 @@ namespace CeilingDesigner
             return saveFileDialog.FileName;
         }
 
-        //if (this.Customer != null)
-        //    saveFileDialog.FileName = this.Customer + " - "
-        //        + this.palaceForm.CurOrderGraph.Ceiling.Name + ".xml";
-        //else
-        //    saveFileDialog.FileName = this.Number + " - "
-        //        + this.palaceForm.CurOrderGraph.Ceiling.Name + ".xml";
-
         private void CloneOrderData(CeilingDataSet.ordersRow src,
             CeilingDataSet.ordersRow dst)
         {
@@ -612,13 +570,13 @@ namespace CeilingDesigner
             this.editing = false;
             this.orderRow = ShareData.CeilingDataSet.orders.NewordersRow();
             ShareData.CeilingDataSet.orders.AddordersRow(this.orderRow);
-            this.editing = true;
 
             System.Random rand = new Random();
             string secs = ConvertDateTimeInt(DateTime.Now).ToString();
             orderRow.ID = Convert.ToInt32(secs.Substring(2, secs.Length - 2)
                 + rand.Next(100).ToString());
 
+            this.editing = true;
             this.orderSource = CeilingDesigner.OrderSource.Null;
             this.orderFile = "";
             palaceForm.NewGraph();

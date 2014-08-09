@@ -190,9 +190,3 @@ namespace CeilingDesigner
         }
     }
 }
-
-//if (this.orderRow == null)
-//    return;
-//if (this.orderRow.IscustomerNull() 
-//    || this.orderRow.customer != this.customerTextBox1.Text)
-//    this.orderRow.customer = this.customerTextBox1.Text;

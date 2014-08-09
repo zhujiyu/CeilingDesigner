@@ -162,7 +162,7 @@
     <paint_height>74.2</paint_height>
     <rows>7</rows>
     <columns>10</columns>
-    <products>#tile:[600,600]{[210090034-0-1,1,1][210090035-0-1,1,1][210090030-0-1,1,1][210090025-0-1,1,1]}#ali:0#</products>
+    <products>#tile:[600,600]{[210090031-0-1,1,1][210090032-0-1,1,1][210090035-0-1,1,1][210090034-0-1,1,1]}#ali:0#</products>
     <appendix>#products:{}#</appendix>
     <keels>#keel:{[(2000,1000),(2000,3000)][(3000,1000),(3000,3000)]}#</keels>
   </ceilings>
@@ -184,7 +184,7 @@
     <paint_height>56</paint_height>
     <rows>9</rows>
     <columns>13</columns>
-    <products>#tile:[600,600]{[210090034-0-1,1,1][210090029-0-1,1,1][210090035-0-1,1,1][210090025-0-1,1,1]}#ali:0#</products>
+    <products>#tile:[600,600]{[210090035-0-1,1,1][210090034-0-1,1,1][210090031-0-1,1,1][210090032-0-1,1,1]}#ali:0#</products>
     <appendix>#products:{}#</appendix>
     <keels>#keel:{[(6190,1670),(6190,3370)][(7190,1670),(7190,3370)][(8190,1670),(8190,3370)]}#</keels>
   </ceilings>
@@ -206,7 +206,7 @@
     <paint_height>50.988</paint_height>
     <rows>10</rows>
     <columns>17</columns>
-    <products>#tile:[900,900]{[210090034-0-1,2,1][210090035-0-1,1,1][210100001-0-1,1,2][210100006-1-1,1,1]}#ali:0#</products>
+    <products>#tile:[600,600]{[210090035-0-1,1,1][210090032-0-1,1,1][210090034-0-1,1,1][210090031-0-1,1,1]}#ali:0#</products>
     <appendix>#products:{}#</appendix>
     <keels>#keel:{[(4230,1790),(4230,3740)][(5230,1790),(5230,4630)][(6230,1790),(6230,4630)][(7230,1790),(7230,4630)]}#</keels>
   </ceilings>
@@ -216,9 +216,9 @@
     <product_id>210090034</product_id>
     <model>300mm x 300mm</model>
     <category>扣板</category>
-    <amount>83</amount>
+    <amount>75</amount>
     <price>23</price>
-    <total>1909</total>
+    <total>1725</total>
   </goods>
   <goods>
     <ID>-2</ID>
@@ -226,32 +226,12 @@
     <product_id>210090035</product_id>
     <model>300mm x 300mm</model>
     <category>扣板</category>
-    <amount>58</amount>
+    <amount>80</amount>
     <price>25</price>
-    <total>1450</total>
+    <total>2000</total>
   </goods>
   <goods>
     <ID>-3</ID>
-    <order_id>-1</order_id>
-    <product_id>210090030</product_id>
-    <model>300mm x 300mm</model>
-    <category>扣板</category>
-    <amount>15</amount>
-    <price>36</price>
-    <total>540</total>
-  </goods>
-  <goods>
-    <ID>-4</ID>
-    <order_id>-1</order_id>
-    <product_id>210090025</product_id>
-    <model>300mm x 300mm</model>
-    <category>扣板</category>
-    <amount>34</amount>
-    <price>30</price>
-    <total>1020</total>
-  </goods>
-  <goods>
-    <ID>-5</ID>
     <order_id>-1</order_id>
     <product_id>33006001</product_id>
     <model>3000mm</model>
@@ -261,7 +241,7 @@
     <total>60</total>
   </goods>
   <goods>
-    <ID>-6</ID>
+    <ID>-4</ID>
     <order_id>-1</order_id>
     <product_id>23001001</product_id>
     <model>2000mm</model>
@@ -271,7 +251,7 @@
     <total>0</total>
   </goods>
   <goods>
-    <ID>-7</ID>
+    <ID>-5</ID>
     <order_id>-1</order_id>
     <product_id>4004001</product_id>
     <model>280mm</model>
@@ -281,7 +261,7 @@
     <total>0</total>
   </goods>
   <goods>
-    <ID>-8</ID>
+    <ID>-6</ID>
     <order_id>-1</order_id>
     <product_id>3005001</product_id>
     <model />
@@ -291,7 +271,7 @@
     <total>0</total>
   </goods>
   <goods>
-    <ID>-9</ID>
+    <ID>-7</ID>
     <order_id>-1</order_id>
     <product_id>13002001</product_id>
     <model>3000mm</model>
@@ -301,7 +281,7 @@
     <total>0</total>
   </goods>
   <goods>
-    <ID>-10</ID>
+    <ID>-8</ID>
     <order_id>-1</order_id>
     <product_id>3004001</product_id>
     <model />
@@ -311,17 +291,7 @@
     <total>0</total>
   </goods>
   <goods>
-    <ID>-11</ID>
-    <order_id>-1</order_id>
-    <product_id>210090029</product_id>
-    <model>300mm x 300mm</model>
-    <category>扣板</category>
-    <amount>20</amount>
-    <price>35</price>
-    <total>700</total>
-  </goods>
-  <goods>
-    <ID>-12</ID>
+    <ID>-9</ID>
     <order_id>-1</order_id>
     <product_id>23001001</product_id>
     <model>1700mm</model>
@@ -331,7 +301,7 @@
     <total>0</total>
   </goods>
   <goods>
-    <ID>-13</ID>
+    <ID>-10</ID>
     <order_id>-1</order_id>
     <product_id>13002001</product_id>
     <model>750mm</model>
@@ -341,7 +311,7 @@
     <total>0</total>
   </goods>
   <goods>
-    <ID>-14</ID>
+    <ID>-11</ID>
     <order_id>-1</order_id>
     <product_id>13002001</product_id>
     <model>550mm</model>
@@ -351,27 +321,7 @@
     <total>0</total>
   </goods>
   <goods>
-    <ID>-15</ID>
-    <order_id>-1</order_id>
-    <product_id>210100001</product_id>
-    <model>600mm x 300mm</model>
-    <category>扣板</category>
-    <amount>34</amount>
-    <price>33</price>
-    <total>1122</total>
-  </goods>
-  <goods>
-    <ID>-16</ID>
-    <order_id>-1</order_id>
-    <product_id>210100006</product_id>
-    <model>600mm x 300mm</model>
-    <category>扣板</category>
-    <amount>14</amount>
-    <price>29</price>
-    <total>406</total>
-  </goods>
-  <goods>
-    <ID>-17</ID>
+    <ID>-12</ID>
     <order_id>-1</order_id>
     <product_id>23001001</product_id>
     <model>1950mm</model>
@@ -381,7 +331,7 @@
     <total>0</total>
   </goods>
   <goods>
-    <ID>-18</ID>
+    <ID>-13</ID>
     <order_id>-1</order_id>
     <product_id>23001001</product_id>
     <model>2840mm</model>
@@ -391,7 +341,7 @@
     <total>0</total>
   </goods>
   <goods>
-    <ID>-19</ID>
+    <ID>-14</ID>
     <order_id>-1</order_id>
     <product_id>13002001</product_id>
     <model>1960mm</model>
@@ -399,6 +349,26 @@
     <amount>9</amount>
     <price>0</price>
     <total>0</total>
+  </goods>
+  <goods>
+    <ID>-15</ID>
+    <order_id>-1</order_id>
+    <product_id>210090031</product_id>
+    <model>300mm x 300mm</model>
+    <category>扣板</category>
+    <amount>75</amount>
+    <price>40.25</price>
+    <total>3018.75</total>
+  </goods>
+  <goods>
+    <ID>-16</ID>
+    <order_id>-1</order_id>
+    <product_id>210090032</product_id>
+    <model>300mm x 300mm</model>
+    <category>扣板</category>
+    <amount>76</amount>
+    <price>23.33</price>
+    <total>1773.08</total>
   </goods>
   <orders>
     <ID>-1</ID>
@@ -418,9 +388,9 @@
     <category>扣板</category>
     <pattern />
     <price>23</price>
-    <amount>83</amount>
+    <amount>75</amount>
     <model>300mm x 300mm</model>
-    <total>1909</total>
+    <total>1725</total>
   </good_view>
   <good_view>
     <id>-3</id>
@@ -430,33 +400,9 @@
     <category>扣板</category>
     <pattern />
     <price>25</price>
-    <amount>58</amount>
+    <amount>80</amount>
     <model>300mm x 300mm</model>
-    <total>1450</total>
-  </good_view>
-  <good_view>
-    <id>-4</id>
-    <order_id>-1</order_id>
-    <product_id>210090030</product_id>
-    <name>TKB-01扣板AF002(300x300)</name>
-    <category>扣板</category>
-    <pattern />
-    <price>36</price>
-    <amount>15</amount>
-    <model>300mm x 300mm</model>
-    <total>540</total>
-  </good_view>
-  <good_view>
-    <id>-5</id>
-    <order_id>-1</order_id>
-    <product_id>210090025</product_id>
-    <name>TKB-01B扣板AG002</name>
-    <category>扣板</category>
-    <pattern />
-    <price>30</price>
-    <amount>34</amount>
-    <model>300mm x 300mm</model>
-    <total>1020</total>
+    <total>2000</total>
   </good_view>
   <good_view>
     <id>-6</id>
@@ -529,18 +475,6 @@
     <total>0</total>
   </good_view>
   <good_view>
-    <id>-12</id>
-    <order_id>-1</order_id>
-    <product_id>210090029</product_id>
-    <name>TKB-01扣板AD004莱茵蓝燧</name>
-    <category>扣板</category>
-    <pattern />
-    <price>35</price>
-    <amount>20</amount>
-    <model>300mm x 300mm</model>
-    <total>700</total>
-  </good_view>
-  <good_view>
     <id>-13</id>
     <order_id>-1</order_id>
     <product_id>23001001</product_id>
@@ -577,30 +511,6 @@
     <total>0</total>
   </good_view>
   <good_view>
-    <id>-16</id>
-    <order_id>-1</order_id>
-    <product_id>210100001</product_id>
-    <name>TKB-06AF015(0.68)</name>
-    <category>扣板</category>
-    <pattern />
-    <price>33</price>
-    <amount>34</amount>
-    <model>600mm x 300mm</model>
-    <total>1122</total>
-  </good_view>
-  <good_view>
-    <id>-17</id>
-    <order_id>-1</order_id>
-    <product_id>210100006</product_id>
-    <name>TKB-06扣板AF013(300x600)</name>
-    <category>扣板</category>
-    <pattern />
-    <price>29</price>
-    <amount>14</amount>
-    <model>600mm x 300mm</model>
-    <total>406</total>
-  </good_view>
-  <good_view>
     <id>-18</id>
     <order_id>-1</order_id>
     <product_id>23001001</product_id>
@@ -635,5 +545,29 @@
     <amount>9</amount>
     <model>1960mm</model>
     <total>0</total>
+  </good_view>
+  <good_view>
+    <id>-24</id>
+    <order_id>-1</order_id>
+    <product_id>210090031</product_id>
+    <name>TKB-01扣板AF003(300x300)</name>
+    <category>扣板</category>
+    <pattern />
+    <price>40.25</price>
+    <amount>75</amount>
+    <model>300mm x 300mm</model>
+    <total>3018.75</total>
+  </good_view>
+  <good_view>
+    <id>-26</id>
+    <order_id>-1</order_id>
+    <product_id>210090032</product_id>
+    <name>TKB-01扣板AF010(300x300)</name>
+    <category>扣板</category>
+    <pattern />
+    <price>23.33</price>
+    <amount>76</amount>
+    <model>300mm x 300mm</model>
+    <total>1773.08</total>
   </good_view>
 </CeilingDataSet>

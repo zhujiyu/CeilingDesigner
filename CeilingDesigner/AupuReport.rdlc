@@ -218,7 +218,7 @@ oEgIQ6kgEEyftCJZHj+B6APPedLwY5SwAPCS+lBDFbP+tYf8CCGaL3sY9ADgcR+9rjPPetrYRDdr74it
             <ReportItems>
               <Textbox Name="textbox30">
                 <rd:DefaultName>textbox30</rd:DefaultName>
-                <Top>0.75cm</Top>
+                <Top>1.75cm</Top>
                 <Width>6.75cm</Width>
                 <Style>
                   <FontFamily>宋体</FontFamily>
@@ -234,11 +234,12 @@ oEgIQ6kgEEyftCJZHj+B6APPedLwY5SwAPCS+lBDFbP+tYf8CCGaL3sY9ADgcR+9rjPPetrYRDdr74it
               </Textbox>
               <Image Name="image2">
                 <Sizing>AutoSize</Sizing>
-                <Top>1.5cm</Top>
+                <Top>2.5cm</Top>
                 <Source>External</Source>
                 <Style>
                   <FontFamily>宋体</FontFamily>
                 </Style>
+                <Height>8.25cm</Height>
                 <Value>=Fields!Address.Value</Value>
               </Image>
             </ReportItems>
@@ -247,6 +248,7 @@ oEgIQ6kgEEyftCJZHj+B6APPedLwY5SwAPCS+lBDFbP+tYf8CCGaL3sY9ADgcR+9rjPPetrYRDdr74it
               <TextAlign>Center</TextAlign>
               <VerticalAlign>Middle</VerticalAlign>
             </Style>
+            <PageBreakAtStart>true</PageBreakAtStart>
           </List>
         </ReportItems>
         <Top>8.25cm</Top>
@@ -827,7 +829,7 @@ oEgIQ6kgEEyftCJZHj+B6APPedLwY5SwAPCS+lBDFbP+tYf8CCGaL3sY9ADgcR+9rjPPetrYRDdr74it
         <Value>="客户名称："+Parameters!customer.Value</Value>
       </Textbox>
     </ReportItems>
-    <Height>18cm</Height>
+    <Height>21cm</Height>
   </Body>
   <Language>zh-CN</Language>
   <PageFooter>
