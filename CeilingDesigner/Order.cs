@@ -502,6 +502,7 @@ namespace CeilingDesigner
         private void CloneOrderData(CeilingDataSet.ordersRow src,
             CeilingDataSet.ordersRow dst)
         {
+            dst.ID = src.ID;
             if (!src.IsnumberNull())
                 dst.number = src.number;
             if (!src.IscustomerNull())
@@ -595,12 +596,28 @@ namespace CeilingDesigner
                 return this.SaveToFile();
         }
 
+        /// <summary>
+        /// DateTime时间格式转换为Unix时间戳格式
+        /// </summary>
+        /// <param name="time"> DateTime时间格式</param>
+        /// <returns>Unix时间戳格式</returns>
+        public static int ConvertDateTimeInt(System.DateTime time)
+        {
+            DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
+            return (int)(time - startTime).TotalSeconds;
+        }
+
         public void NewOrder()
         {
             this.editing = false;
             this.orderRow = ShareData.CeilingDataSet.orders.NewordersRow();
             ShareData.CeilingDataSet.orders.AddordersRow(this.orderRow);
             this.editing = true;
+
+            System.Random rand = new Random();
+            string secs = ConvertDateTimeInt(DateTime.Now).ToString();
+            orderRow.ID = Convert.ToInt32(secs.Substring(2, secs.Length - 2)
+                + rand.Next(100).ToString());
 
             this.orderSource = CeilingDesigner.OrderSource.Null;
             this.orderFile = "";
@@ -965,59 +982,3 @@ namespace CeilingDesigner
 
     public enum OrderSource { WebServer, XMLDoc, Null };
 }
-
-//this.orderInfo.InitInfo(this.orderRow);
-//this.tabControl1.Controls.Clear();
-//this.palaceForm.OpenOrder();
-//this.DisplayGraph(graph);
-//this.DisplayGraph(graph);
-
-//DataSet ds = new DataSet();
-//ds.ReadXml(this.orderFile);
-//if (ds.DataSetName.CompareTo("CeilingDataSet") == 0)
-//    return;
-//this.ceilingDataSet.ReadXml(this.orderFile);
-
-//this.tabControl1.Controls.Clear();
-//this.DisplayGraph(graph);
-//this.DisplayGraph(graph);
-//this.palaceForm.OpenOrder();
-
-//public void RemoveOrderDB()
-//{
-//    //string number = this.Number;
-//    CeilingDataSet dataSet = new CeilingDataSet();
-
-//    this.orderAdapter.FillByNumber(dataSet.orders, this.Number);
-//    this.ceilingAdapter.FillByOrderId(dataSet.ceilings, dataSet.orders[0].ID);
-//    this.goodAdapter.FillByOrderId(dataSet.goods, dataSet.orders[0].ID);
-
-//    for (int i = 0; i < dataSet.ceilings.Count; i++)
-//    {
-//        this.cwAdapter.FillByCeilingId(dataSet.ceiling_walles, dataSet.ceilings[i].ID);
-//        for (int j = 0; j < dataSet.ceiling_walles.Count; j++)
-//        {
-//            dataSet.ceiling_walles[j].Delete();
-//        }
-//        this.cwAdapter.Update(dataSet.ceiling_walles);
-//        dataSet.ceiling_walles.AcceptChanges();
-
-//        dataSet.ceilings[i].Delete();
-//    }
-//    this.ceilingAdapter.Update(dataSet.ceilings);
-//    dataSet.ceilings.AcceptChanges();
-
-//    for (int i = 0; i < dataSet.goods.Count; i++)
-//    {
-//        dataSet.goods[i].Delete();
-//    }
-//    this.goodAdapter.Update(dataSet.goods);
-//    dataSet.goods.AcceptChanges();
-
-//    for (int i = 0; i < dataSet.orders.Count; i++)
-//    {
-//        dataSet.orders[i].Delete();
-//    }
-//    this.orderAdapter.Update(dataSet.orders);
-//    dataSet.orders.AcceptChanges();
-//}

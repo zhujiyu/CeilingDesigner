@@ -710,6 +710,7 @@ oEgIQ6kgEEyftCJZHj+B6APPedLwY5SwAPCS+lBDFbP+tYf8CCGaL3sY9ADgcR+9rjPPetrYRDdr74it
                       <rd:DefaultName>textbox27</rd:DefaultName>
                       <Style>
                         <FontFamily>宋体</FontFamily>
+                        <Format>F</Format>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
