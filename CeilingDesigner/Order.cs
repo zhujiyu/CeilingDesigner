@@ -571,13 +571,13 @@ namespace CeilingDesigner
             this.editing = false;
             this.orderRow = ShareData.CeilingDataSet.orders.NewordersRow();
             ShareData.CeilingDataSet.orders.AddordersRow(this.orderRow);
-            this.editing = true;
 
             System.Random rand = new Random();
             string secs = ConvertDateTimeInt(DateTime.Now).ToString();
             orderRow.ID = Convert.ToInt32(secs.Substring(2, secs.Length - 2)
                 + rand.Next(100).ToString());
 
+            this.editing = true;
             this.orderSource = CeilingDesigner.OrderSource.Null;
             this.orderFile = "";
             palaceForm.NewGraph();

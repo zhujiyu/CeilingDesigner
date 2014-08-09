@@ -190,7 +190,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="SelectOrderForm.resx">
       <DependentUpon>SelectOrderForm.cs</DependentUpon>
       <SubType>Designer</SubType>
