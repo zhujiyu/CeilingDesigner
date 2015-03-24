@@ -566,17 +566,37 @@ namespace CeilingDesigner
             return (int)(time - startTime).TotalSeconds;
         }
 
+        public static int ConvertDateTimeMinutes(System.DateTime time)
+        {
+            DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
+            return (int)(time - startTime).TotalMinutes;
+        }
+
+        public static DateTime ConvertIntDateTime(int minus)
+        {
+            DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
+            return startTime.AddMinutes(minus);
+            //return startTime.AddSeconds(secs);
+        }
+
         public void NewOrder()
         {
             this.editing = false;
             this.orderRow = ShareData.CeilingDataSet.orders.NewordersRow();
             ShareData.CeilingDataSet.orders.AddordersRow(this.orderRow);
 
+            string minutes = ConvertDateTimeMinutes(DateTime.Now).ToString();
             System.Random rand = new Random();
-            string secs = ConvertDateTimeInt(DateTime.Now).ToString();
-            orderRow.ID = Convert.ToInt32(secs.Substring(2, secs.Length - 2)
-                + rand.Next(100).ToString());
+            string idst = minutes.Substring(1, minutes.Length - 1) + rand.Next(100).ToString();
+            orderRow.ID = Convert.ToInt32(idst);
 
+            //DateTime dt = ConvertIntDateTime(Convert.ToInt32(minutes.Substring(1, minutes.Length - 1)));
+            //string secs = ConvertDateTimeInt(DateTime.Now).ToString();
+            ////int _secs = Convert.ToInt32(secs);
+            //int _secs = Convert.ToInt32(secs.Substring(3, secs.Length - 3));
+            //DateTime dt = ConvertIntDateTime(_secs);
+            //string idst = secs.Substring(3, secs.Length - 3) + rand.Next(100).ToString();
+            
             this.editing = true;
             this.orderSource = CeilingDesigner.OrderSource.Null;
             this.orderFile = "";

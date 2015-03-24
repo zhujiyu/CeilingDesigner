@@ -45,3 +45,6 @@ Release
 Debug
 *.suo
 *.suo
+/data/temp
+/data/err2013929.log
+/data/err
