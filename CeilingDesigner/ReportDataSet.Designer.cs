@@ -292,7 +292,8 @@ namespace CeilingDesigner {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class reportGoodsDataTable : global::System.Data.TypedTableBase<reportGoodsRow> {
+        public partial class reportGoodsDataTable : System.Data.DataTable //global::System.Data.TypedTableBase<reportGoodsRow> 
+        {
             
             private global::System.Data.DataColumn columnID;
             
@@ -632,7 +633,8 @@ namespace CeilingDesigner {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PhotosDataTable : global::System.Data.TypedTableBase<PhotosRow> {
+        public partial class PhotosDataTable : System.Data.DataTable //global::System.Data.TypedTableBase<PhotosRow> 
+        {
             
             private global::System.Data.DataColumn columnID;
             

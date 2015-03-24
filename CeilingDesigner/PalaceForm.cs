@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
+//using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Net;
@@ -82,11 +82,12 @@ namespace CeilingDesigner
             this.loadCurs();
             this.systemStatusLabel.Text = "加载数据...";
 
-            Func<CeilingDataSet, CeilingDataSet> func = (set) => BuckleList.DataReading(set);
+            LoadCeilingDataSet read = (set) => BuckleList.DataReading(set);
+            //Func<CeilingDataSet, CeilingDataSet> func = (set) => BuckleList.DataReading(set);
 
-            IAsyncResult asyncResult = func.BeginInvoke(ShareData.CeilingDataSet, (result) =>
+            IAsyncResult asyncResult = read.BeginInvoke(ShareData.CeilingDataSet, (result) =>
             {
-                CeilingDataSet set = func.EndInvoke(result);
+                CeilingDataSet set = read.EndInvoke(result);
 
                 if (set == null || set.product_classes.Count < 1 || set.products.Count < 1
                     || set.ceiling_samples.Count < 1 || set.ceiling_sample_walles.Count < 1)
@@ -110,11 +111,12 @@ namespace CeilingDesigner
             this.loadCurs();
             this.systemStatusLabel.Text = "加载数据...";
 
-            Func<CeilingDataSet, CeilingDataSet> func = (set) => BuckleList.DataLoading(set);
+            LoadCeilingDataSet load = (set) => BuckleList.DataLoading(set);
+            //Func<CeilingDataSet, CeilingDataSet> func = (set) => BuckleList.DataLoading(set);
 
-            IAsyncResult asyncResult = func.BeginInvoke(ShareData.CeilingDataSet, (result) =>
+            IAsyncResult asyncResult = load.BeginInvoke(ShareData.CeilingDataSet, (result) =>
             {
-                CeilingDataSet set = func.EndInvoke(result);
+                CeilingDataSet set = load.EndInvoke(result);
 
                 if (set == null || set.product_classes.Count < 1 || set.products.Count < 1
                     || set.ceiling_samples.Count < 1 || set.ceiling_sample_walles.Count < 1)
@@ -125,7 +127,7 @@ namespace CeilingDesigner
                 }
                 else
                 {
-                    this.BeginInvoke(new Action<CeilingDataSet, bool>(_updateLocalData), 
+                    this.BeginInvoke(new UpdateLocalDataHandler(_updateLocalData), 
                         set, e.Save);
                     this.BeginInvoke(new Action<string>(SetDataSource), 
                         ShareData.Server);
@@ -161,7 +163,7 @@ namespace CeilingDesigner
                 AddProductNode(product);
             }
 
-            this.BeginInvoke(new Action(_dataLoaded));
+            this.BeginInvoke(new VoidAction(_dataLoaded));
         }
 
         private void _dataLoaded()
@@ -260,9 +262,10 @@ namespace CeilingDesigner
 
         private void PalaceForm_Load(object sender, EventArgs e)
         {
-            this.BeginInvoke(new Action(_InitUI), null);
+            this.BeginInvoke(new VoidAction(_InitUI), null);
             this.BeginInvoke(
-                new Action<PalaceForm, LoadDataEventArgs>(PalaceForm_LoadDataFromFile),
+                new LoadDataHandler(PalaceForm_LoadDataFromFile),
+                //new Action<PalaceForm, LoadDataEventArgs>(PalaceForm_LoadDataFromFile),
                 this, null);
             _HelpCtrl();
             _PrepareOrder();
@@ -1726,6 +1729,14 @@ namespace CeilingDesigner
             }
         }
     }
+
+    public delegate void VoidAction();
+
+    public delegate void UpdateLocalDataHandler(CeilingDataSet ds, bool b);
+
+    public delegate CeilingDataSet LoadCeilingDataSet(CeilingDataSet ds);
+
+    public delegate string LoadPhotoHandler(CeilingDataSet.productsRow row);
 
     public class LoadDataEventArgs : EventArgs
     {

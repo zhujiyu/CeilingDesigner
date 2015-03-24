@@ -162,7 +162,6 @@
     <paint_height>74.2</paint_height>
     <rows>7</rows>
     <columns>10</columns>
-    <products>#tile:[600,600]{[210090031-0-1,1,1][210090032-0-1,1,1][210090035-0-1,1,1][210090034-0-1,1,1]}#ali:0#</products>
     <appendix>#products:{}#</appendix>
     <keels>#keel:{[(2000,1000),(2000,3000)][(3000,1000),(3000,3000)]}#</keels>
   </ceilings>

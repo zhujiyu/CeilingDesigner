@@ -43,4 +43,8 @@ bin
 obj
 Release
 Debug
-CeilingDesigner.suo
+*.suo
+*.suo
+/data/temp
+/data/err2013929.log
+/data/err

@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="yes"?>
+<CeilingDataSet xmlns="http://tempuri.org/CeilingDataSet.xsd">
+  <ceiling_samples>
+    <ID>1</ID>
+    <name>方形</name>
+    <lines>4</lines>
+  </ceiling_samples>
+  <ceiling_samples>
+    <ID>2</ID>
+    <name>L形</name>
+    <lines>6</lines>
+  </ceiling_samples>
+  <ceiling_samples>
+    <ID>3</ID>
+    <name>双L形1</name>
+    <lines>8</lines>
+  </ceiling_samples>
+  <ceiling_samples>
+    <ID>4</ID>
+    <name>双L形2</name>
+    <lines>8</lines>
+  </ceiling_samples>
+</CeilingDataSet>
